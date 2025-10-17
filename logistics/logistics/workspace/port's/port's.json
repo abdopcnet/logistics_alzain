@@ -1,0 +1,34 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"glX9Xp5k_J\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Port's</span>\",\"col\":12}},{\"id\":\"Trgkil7z2F\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Jed Port\",\"col\":4}}]",
+ "creation": "2025-01-02 21:49:19.545030",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "quality",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Port's",
+ "links": [],
+ "modified": "2025-02-11 15:25:25.544340",
+ "modified_by": "kamal@alzainglobal.com",
+ "module": "logistics",
+ "name": "Port's",
+ "number_cards": [
+  {
+   "label": "Jed Port",
+   "number_card_name": "Waiting For Arrival"
+  }
+ ],
+ "owner": "kamal@alzainglobal.com",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 2.0,
+ "shortcuts": [],
+ "title": "Port's"
+}

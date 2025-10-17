@@ -1,0 +1,50 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "prompt",
+ "creation": "2024-11-19 12:05:12.618997",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "port_type",
+  "attach_image"
+ ],
+ "fields": [
+  {
+   "fieldname": "port_type",
+   "fieldtype": "Data",
+   "label": "Port Type",
+   "translatable": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "attach_image",
+   "fieldtype": "Attach Image",
+   "label": "Attach Image"
+  }
+ ],
+ "links": [],
+ "modified": "2024-11-21 20:12:01.900454",
+ "modified_by": "Administrator",
+ "module": "logistics",
+ "name": "Port Type",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "port_type"
+}

@@ -1,0 +1,188 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:driver_name",
+ "creation": "2024-11-05 12:04:27.613237",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "driver",
+  "driver_name",
+  "column_break_mcac",
+  "phone_number",
+  "column_break_ksww",
+  "ready",
+  "section_break_fkmj",
+  "truck",
+  "axles_on_a_truck",
+  "truck_weight",
+  "plate_no",
+  "column_break_qpum",
+  "zawil_exp_date",
+  "operation_card_exp_date",
+  "column_break_pbjs",
+  "trailer",
+  "axles_on_a_trailer",
+  "trailer_weight",
+  "section_break_qiyg",
+  "weight",
+  "column_break_ubzs",
+  "axles"
+ ],
+ "fields": [
+  {
+   "fieldname": "truck",
+   "fieldtype": "Link",
+   "label": "Truck",
+   "options": "Truck"
+  },
+  {
+   "fieldname": "trailer",
+   "fieldtype": "Link",
+   "label": "Trailer",
+   "options": "Trailer"
+  },
+  {
+   "fieldname": "column_break_pbjs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "truck.axles_on_a_truck",
+   "fieldname": "axles_on_a_truck",
+   "fieldtype": "Float",
+   "label": "Axles on a Truck",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "trailer.trailer_weight",
+   "fieldname": "trailer_weight",
+   "fieldtype": "Float",
+   "label": "Trailer weight",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "trailer.axles_on_a_trailer",
+   "fieldname": "axles_on_a_trailer",
+   "fieldtype": "Float",
+   "label": "Axles on a Trailer",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_qiyg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "label": "Total Weight",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ubzs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "axles",
+   "fieldtype": "Float",
+   "label": "Total Axles",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "truck.truk_weight",
+   "fieldname": "truck_weight",
+   "fieldtype": "Float",
+   "label": "Truck Weight",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "fieldname": "driver",
+   "fieldtype": "Link",
+   "label": "Driver",
+   "options": "Driver"
+  },
+  {
+   "fieldname": "column_break_mcac",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "ready",
+   "fieldtype": "Check",
+   "label": "Ready"
+  },
+  {
+   "fieldname": "section_break_fkmj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "truck.zawil_exp_date",
+   "fieldname": "zawil_exp_date",
+   "fieldtype": "Date",
+   "label": "Zawil Exp Date"
+  },
+  {
+   "fetch_from": "truck.operation_card_exp_date",
+   "fieldname": "operation_card_exp_date",
+   "fieldtype": "Date",
+   "label": "Operation Card Exp Date"
+  },
+  {
+   "fieldname": "column_break_ksww",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_qpum",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "driver.cell_number",
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number"
+  },
+  {
+   "fetch_from": "driver.full_name",
+   "fieldname": "driver_name",
+   "fieldtype": "Data",
+   "label": "Driver Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "plate_no",
+   "fieldtype": "Data",
+   "label": "Plate No"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-05 17:10:06.947662",
+ "modified_by": "Administrator",
+ "module": "logistics",
+ "name": "Fleet",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "driver_name",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

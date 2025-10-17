@@ -1,0 +1,358 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "license_plate_ar",
+ "creation": "2024-11-03 11:41:36.796550",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "asset_owner_name",
+  "plate_type",
+  "license_plate_ar",
+  "license_plate_en",
+  "location",
+  "doors",
+  "color",
+  "color_code",
+  "column_break_yfhf",
+  "chassis_no",
+  "manufacture",
+  "manufacture_year",
+  "model",
+  "vehicle_value",
+  "employee",
+  "status",
+  "capacity",
+  "current_odometer_reading",
+  "dimensions_section",
+  "length",
+  "column_break_enms",
+  "width",
+  "column_break_ammb",
+  "height",
+  "insurance_details_section",
+  "periodic_inspection_serial_no",
+  "insurance_company",
+  "policy_no",
+  "license_serial_no",
+  "license_serial_no_copy",
+  "operation_card_serial_no",
+  "column_break_dyux",
+  "periodic_inspection_exp_date",
+  "start_date",
+  "end_date",
+  "license_exp_date",
+  "zawil_exp_date",
+  "operation_card_exp_date",
+  "section_break_rggl",
+  "fuel_type",
+  "fuel_uom",
+  "column_break_lrbd",
+  "wheels_on_a_truck",
+  "size_of_wheels",
+  "axles_on_a_truck",
+  "section_break_yjca",
+  "max_load",
+  "truk_weight",
+  "column_break_kwpb",
+  "hp",
+  "documents_tab",
+  "table_mytl"
+ ],
+ "fields": [
+  {
+   "fieldname": "license_serial_no",
+   "fieldtype": "Data",
+   "label": "License Serial No"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location"
+  },
+  {
+   "fieldname": "column_break_yfhf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "chassis_no",
+   "fieldtype": "Data",
+   "label": "Chassis No"
+  },
+  {
+   "fieldname": "vehicle_value",
+   "fieldtype": "Float",
+   "label": "Vehicle Value"
+  },
+  {
+   "fieldname": "insurance_details_section",
+   "fieldtype": "Section Break",
+   "label": "Insurance Details"
+  },
+  {
+   "fieldname": "insurance_company",
+   "fieldtype": "Data",
+   "label": "Insurance Company"
+  },
+  {
+   "fieldname": "policy_no",
+   "fieldtype": "Data",
+   "label": "Policy No"
+  },
+  {
+   "fieldname": "column_break_dyux",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "section_break_rggl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "fuel_type",
+   "fieldtype": "Select",
+   "label": "Fuel Type",
+   "options": "Petrol\nDiesel\nGas\nElectric"
+  },
+  {
+   "fieldname": "column_break_lrbd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "size_of_wheels",
+   "fieldtype": "Data",
+   "label": "Size Of Wheels "
+  },
+  {
+   "fieldname": "fuel_uom",
+   "fieldtype": "Data",
+   "label": "Fuel UOM"
+  },
+  {
+   "fieldname": "axles_on_a_truck",
+   "fieldtype": "Float",
+   "label": "Axles on a Truck",
+   "precision": "0"
+  },
+  {
+   "fieldname": "wheels_on_a_truck",
+   "fieldtype": "Float",
+   "label": "Wheels on a Truck",
+   "precision": "0"
+  },
+  {
+   "fieldname": "doors",
+   "fieldtype": "Data",
+   "label": "Doors"
+  },
+  {
+   "fieldname": "color",
+   "fieldtype": "Data",
+   "label": "Color"
+  },
+  {
+   "fieldname": "section_break_yjca",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "max_load",
+   "fieldtype": "Float",
+   "label": "Max Load"
+  },
+  {
+   "fieldname": "truk_weight",
+   "fieldtype": "Float",
+   "label": "Truck Weight",
+   "precision": "0"
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "column_break_kwpb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "hp",
+   "fieldtype": "Data",
+   "label": "HP"
+  },
+  {
+   "fieldname": "documents_tab",
+   "fieldtype": "Tab Break",
+   "label": "Documents"
+  },
+  {
+   "fieldname": "table_mytl",
+   "fieldtype": "Table",
+   "options": "Document Table"
+  },
+  {
+   "fieldname": "license_exp_date",
+   "fieldtype": "Date",
+   "label": "License Exp Date"
+  },
+  {
+   "fieldname": "zawil_exp_date",
+   "fieldtype": "Date",
+   "label": "Zawil Exp Date"
+  },
+  {
+   "fieldname": "operation_card_exp_date",
+   "fieldtype": "Date",
+   "label": "Operation Card Exp Date"
+  },
+  {
+   "fieldname": "periodic_inspection_exp_date",
+   "fieldtype": "Date",
+   "label": "Periodic inspection Exp Date"
+  },
+  {
+   "fieldname": "license_serial_no_copy",
+   "fieldtype": "Data",
+   "label": "Zawil Serial No"
+  },
+  {
+   "fieldname": "operation_card_serial_no",
+   "fieldtype": "Data",
+   "label": "Operation Card Serial No"
+  },
+  {
+   "fieldname": "periodic_inspection_serial_no",
+   "fieldtype": "Data",
+   "label": "Periodic inspection Serial No"
+  },
+  {
+   "fieldname": "dimensions_section",
+   "fieldtype": "Section Break",
+   "label": "Dimensions"
+  },
+  {
+   "fieldname": "length",
+   "fieldtype": "Float",
+   "label": "Length",
+   "precision": "0"
+  },
+  {
+   "fieldname": "column_break_enms",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "width",
+   "fieldtype": "Float",
+   "label": "Width",
+   "precision": "0"
+  },
+  {
+   "fieldname": "column_break_ammb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "height",
+   "fieldtype": "Float",
+   "label": "Height",
+   "precision": "0"
+  },
+  {
+   "fieldname": "asset_owner_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Asset Owner Name",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "color_code",
+   "fieldtype": "Color",
+   "label": "Color Code"
+  },
+  {
+   "fieldname": "plate_type",
+   "fieldtype": "Data",
+   "label": "Plate Type"
+  },
+  {
+   "fieldname": "manufacture_year",
+   "fieldtype": "Data",
+   "label": "Manufacture Year"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "In Service\nUnder Maintenance\nOut of Service"
+  },
+  {
+   "fieldname": "model",
+   "fieldtype": "Data",
+   "label": "Model"
+  },
+  {
+   "fieldname": "capacity",
+   "fieldtype": "Data",
+   "label": "Capacity"
+  },
+  {
+   "fieldname": "current_odometer_reading",
+   "fieldtype": "Data",
+   "label": "Current Odometer Reading"
+  },
+  {
+   "fieldname": "license_plate_en",
+   "fieldtype": "Data",
+   "label": "License Plate EN",
+   "translatable": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "license_plate_ar",
+   "fieldtype": "Data",
+   "label": "License Plate AR",
+   "translatable": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "manufacture",
+   "fieldtype": "Data",
+   "label": "Manufacture"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-12 12:37:38.941140",
+ "modified_by": "Administrator",
+ "module": "logistics",
+ "name": "Truck",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

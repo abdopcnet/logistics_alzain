@@ -1,0 +1,81 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-12-29 02:08:09.242772",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "transporter_credit",
+  "vat_account",
+  "column_break_dcanp",
+  "employee_credit",
+  "bank_credit",
+  "section_break_aynte",
+  "fleet_calculation_account"
+ ],
+ "fields": [
+  {
+   "fieldname": "fleet_calculation_account",
+   "fieldtype": "Table",
+   "label": "Fleet Calculation Account",
+   "options": "Fleet Calculation Account"
+  },
+  {
+   "fieldname": "transporter_credit",
+   "fieldtype": "Link",
+   "label": "Transporter Credit",
+   "options": "Account"
+  },
+  {
+   "fieldname": "section_break_aynte",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "vat_account",
+   "fieldtype": "Link",
+   "label": "Vat Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "column_break_dcanp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "employee_credit",
+   "fieldtype": "Link",
+   "label": "Employee Credit",
+   "options": "Account"
+  },
+  {
+   "fieldname": "bank_credit",
+   "fieldtype": "Link",
+   "label": "Bank Credit",
+   "options": "Account"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-01-19 01:54:01.381876",
+ "modified_by": "Administrator",
+ "module": "logistics",
+ "name": "Fleet Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

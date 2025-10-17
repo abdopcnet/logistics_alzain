@@ -1,0 +1,79 @@
+{
+ "actions": [],
+ "creation": "2024-02-08 23:28:07.478112",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "hs_code",
+  "arabic_name",
+  "item_english_name",
+  "duty_rate",
+  "procedures"
+ ],
+ "fields": [
+  {
+   "fieldname": "hs_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "HS Code ",
+   "options": "HS code",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "hs_code.arabic",
+   "fieldname": "arabic_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Arabic Name",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "hs_code.english",
+   "fieldname": "item_english_name",
+   "fieldtype": "Data",
+   "label": "Item English Name"
+  },
+  {
+   "fetch_from": "hs_code.custom_percent",
+   "fieldname": "duty_rate",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Duty Rate",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "hs_code.custom_procedures",
+   "fieldname": "procedures",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Procedures",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-02-09 00:34:15.343216",
+ "modified_by": "Administrator",
+ "module": "logistics",
+ "name": "Customer HS",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

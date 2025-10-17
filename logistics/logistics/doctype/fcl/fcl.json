@@ -1,0 +1,207 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-02-04 02:01:06.812429",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "container_no",
+  "type",
+  "container_weight",
+  "qty",
+  "package_type",
+  "shipment_weight",
+  "total_weight",
+  "create_transit",
+  "trip",
+  "transporter",
+  "driver",
+  "operation_received",
+  "driver_received",
+  "exit_from_port",
+  "storage",
+  "warehouse_receipt",
+  "empty_receipt",
+  "damage",
+  "destination",
+  "cost",
+  "comments",
+  "bol_status",
+  "attach"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "container_no",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "label": "Container No",
+   "link_filters": "[[\"Container\",\"shipping_line_owner\",\"=\",\"eval: parent.shipping_line\"]]",
+   "options": "Container",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fetch_from": "container_no.type",
+   "fieldname": "type",
+   "fieldtype": "Data",
+   "label": "Type",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Qty",
+   "precision": "0"
+  },
+  {
+   "fieldname": "attach",
+   "fieldtype": "Attach",
+   "label": "Attach"
+  },
+  {
+   "columns": 1,
+   "fieldname": "comments",
+   "fieldtype": "Text",
+   "in_list_view": 1,
+   "label": "Comments"
+  },
+  {
+   "columns": 1,
+   "depends_on": "eval:doc.create_transit=='1'",
+   "fieldname": "trip",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "TBoL No",
+   "options": "Transit BoL"
+  },
+  {
+   "fetch_from": "container_no.container_weight",
+   "fieldname": "container_weight",
+   "fieldtype": "Float",
+   "label": "Container Tare Weight",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "fieldname": "shipment_weight",
+   "fieldtype": "Float",
+   "label": "Shipment Weight",
+   "precision": "1"
+  },
+  {
+   "fieldname": "total_weight",
+   "fieldtype": "Float",
+   "label": "Total Weight",
+   "precision": "0"
+  },
+  {
+   "fieldname": "package_type",
+   "fieldtype": "Link",
+   "label": "Package Type",
+   "options": "UOM"
+  },
+  {
+   "columns": 1,
+   "default": "0",
+   "fieldname": "create_transit",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Create Transit"
+  },
+  {
+   "fieldname": "bol_status",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "BoL Status",
+   "options": "Draft\nOpen\nComplete",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "trip.total",
+   "fieldname": "cost",
+   "fieldtype": "Float",
+   "label": "Cost"
+  },
+  {
+   "fieldname": "transporter",
+   "fieldtype": "Link",
+   "label": "Transporter",
+   "link_filters": "[[\"Supplier\",\"is_transporter\",\"=\",1]]",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "driver",
+   "fieldtype": "Link",
+   "label": "Driver",
+   "link_filters": "[[\"Fleet\",\"transporter\",\"=\",\"eval: doc.transporter\"]]",
+   "options": "Fleet"
+  },
+  {
+   "fieldname": "destination",
+   "fieldtype": "Link",
+   "label": "Destination",
+   "options": "Address"
+  },
+  {
+   "default": "0",
+   "fieldname": "storage",
+   "fieldtype": "Check",
+   "label": "Storage"
+  },
+  {
+   "default": "0",
+   "fieldname": "warehouse_receipt",
+   "fieldtype": "Check",
+   "label": "Warehouse Receipt"
+  },
+  {
+   "default": "0",
+   "fieldname": "empty_receipt",
+   "fieldtype": "Check",
+   "label": "Empty Receipt"
+  },
+  {
+   "default": "0",
+   "fieldname": "damage",
+   "fieldtype": "Check",
+   "label": "Damage"
+  },
+  {
+   "default": "0",
+   "fieldname": "exit_from_port",
+   "fieldtype": "Check",
+   "label": "Exit from port"
+  },
+  {
+   "default": "0",
+   "fieldname": "driver_received",
+   "fieldtype": "Check",
+   "label": "Driver Received "
+  },
+  {
+   "default": "0",
+   "fieldname": "operation_received",
+   "fieldtype": "Check",
+   "label": "Operation Received "
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-08-03 22:32:30.389399",
+ "modified_by": "Administrator",
+ "module": "logistics",
+ "name": "FCL",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

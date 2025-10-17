@@ -1,0 +1,147 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-02-04 23:50:39.707839",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item",
+  "supplier",
+  "bank",
+  "debit_account",
+  "customer",
+  "transaction",
+  "bol_no",
+  "fee",
+  "date",
+  "sadad_no",
+  "attach",
+  "reference_doc",
+  "comments"
+ ],
+ "fields": [
+  {
+   "columns": 1,
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item",
+   "link_filters": "[[\"Item\",\"item_group\",\"=\",\"Declaration\"]]",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fetch_from": "item.custom_supplier",
+   "fieldname": "supplier",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Supplier",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "bank",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Credit Account",
+   "link_filters": "[[\"Account\",\"account_type\",\"in\",[\"Bank\",\"Cash\"]]]",
+   "options": "Account",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fetch_from": "item.custom_debit_account",
+   "fieldname": "debit_account",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Debit Account",
+   "link_filters": "[[\"Account\",\"account_type\",\"=\",\"Payable\"]]",
+   "options": "Account",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "customer",
+   "options": "Customer",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "fee",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Fee",
+   "precision": "2",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "columns": 1,
+   "default": "Now",
+   "fieldname": "date",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Date",
+   "options": "NOW",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "sadad_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Sadad No",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "attach",
+   "fieldtype": "Attach",
+   "in_list_view": 1,
+   "label": "Attach"
+  },
+  {
+   "columns": 1,
+   "fieldname": "reference_doc",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Reference Doc",
+   "options": "Journal Entry"
+  },
+  {
+   "fieldname": "comments",
+   "fieldtype": "Small Text",
+   "label": "Comments"
+  },
+  {
+   "fieldname": "bol_no",
+   "fieldtype": "Data",
+   "label": "Bol No",
+   "reqd": 1
+  },
+  {
+   "fieldname": "transaction",
+   "fieldtype": "Link",
+   "label": "Transaction",
+   "options": "Transaction",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-07-17 11:45:59.956042",
+ "modified_by": "Administrator",
+ "module": "logistics",
+ "name": "Port Fee",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

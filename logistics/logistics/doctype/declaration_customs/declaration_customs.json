@@ -1,0 +1,647 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{document_ref_no}",
+ "creation": "2024-10-14 09:10:10.634989",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_tyxq",
+  "exporter_importer",
+  "column_break_egmz",
+  "importer_no",
+  "column_break_lvdr",
+  "vat_no",
+  "column_break_swnh",
+  "authorization_no",
+  "section_break_hzws",
+  "transaction_no",
+  "dec_type",
+  "column_break_uwfz",
+  "document_ref_no",
+  "column_break_mjtz",
+  "bol_no",
+  "column_break_pdjl",
+  "port_type",
+  "section_break_ofcq",
+  "column_break_qmot",
+  "export_country",
+  "column_break_edmt",
+  "import_country",
+  "section_break_ocgw",
+  "transaction_status",
+  "column_break_dsrl",
+  "do_status",
+  "column_break_kyrk",
+  "dec_status",
+  "column_break_avwm",
+  "terminal_status",
+  "section_break_vatj",
+  "delivery_order_no",
+  "shipping_line",
+  "vessel_status",
+  "column_break_jsul",
+  "manifest_no",
+  "shipping_route_no",
+  "free_days",
+  "column_break_qvfh",
+  "shipping_line_agent",
+  "agent_code",
+  "group_code",
+  "column_break_prux",
+  "discharge_port",
+  "terminal",
+  "vessel",
+  "section_break_tzpf",
+  "dec_no",
+  "column_break_jtoj",
+  "dec_date",
+  "column_break_zhju",
+  "discharge_date",
+  "hijri_discharge_date",
+  "column_break_ekwd",
+  "demurrage_date",
+  "hijri_demurrage_date",
+  "column_break_nlfs",
+  "duty_fees_date",
+  "section_break_pnga",
+  "remarks",
+  "column_break_wisx",
+  "port_remarks",
+  "column_break_gkip",
+  "terminal_remarks",
+  "column_break_xuwz",
+  "office_remarks",
+  "section_break_wqbv",
+  "table_myde",
+  "section_break_oqcz",
+  "transaction_jv_entries",
+  "tab_2_tab",
+  "fcl",
+  "column_break_giat",
+  "cbm",
+  "column_break_nmir",
+  "roro",
+  "section_break_zawm",
+  "containers_qty",
+  "column_break_jwog",
+  "goods_type",
+  "column_break_qrhq",
+  "no_of_packages",
+  "column_break_rzqs",
+  "commercial_invoice_no",
+  "section_break_cwef",
+  "fcl_list",
+  "cbm_list",
+  "roro_list",
+  "tab_3_tab",
+  "attach"
+ ],
+ "fields": [
+  {
+   "fieldname": "dec_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Dec No"
+  },
+  {
+   "fieldname": "dec_type",
+   "fieldtype": "Select",
+   "label": "Dec Type",
+   "options": "Import\nExport\nReExport"
+  },
+  {
+   "fetch_from": "transaction_no.port_type",
+   "fetch_if_empty": 1,
+   "fieldname": "port_type",
+   "fieldtype": "Data",
+   "label": "Port Type",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "transaction_no.customer",
+   "fetch_if_empty": 1,
+   "fieldname": "exporter_importer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Long Text",
+   "label": "Customs Remarks"
+  },
+  {
+   "fetch_from": "transaction_no.document_ref_no",
+   "fetch_if_empty": 1,
+   "fieldname": "document_ref_no",
+   "fieldtype": "Data",
+   "label": "Document Ref No",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_jtoj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_zhju",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "discharge_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Discharge Date"
+  },
+  {
+   "fieldname": "demurrage_date",
+   "fieldtype": "Date",
+   "label": "Demurrage Date"
+  },
+  {
+   "description": "Supplier",
+   "fetch_from": "transaction_no.terminal",
+   "fetch_if_empty": 1,
+   "fieldname": "terminal",
+   "fieldtype": "Data",
+   "label": "Terminal",
+   "read_only": 1
+  },
+  {
+   "fieldname": "transaction_no",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Transaction No",
+   "options": "Transaction",
+   "unique": 1
+  },
+  {
+   "fieldname": "section_break_tzpf",
+   "fieldtype": "Section Break",
+   "label": "Dec Information"
+  },
+  {
+   "fieldname": "column_break_uwfz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_mjtz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_pdjl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_egmz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "section_break_hzws",
+   "fieldtype": "Section Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "section_break_pnga",
+   "fieldtype": "Section Break",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "section_break_tyxq",
+   "fieldtype": "Section Break",
+   "label": "Customer Information"
+  },
+  {
+   "fieldname": "section_break_vatj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "bol_no.delivery_order_no",
+   "fetch_if_empty": 1,
+   "fieldname": "delivery_order_no",
+   "fieldtype": "Data",
+   "label": "Delivery Order No",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "transaction_no.shipping_line",
+   "fieldname": "shipping_line",
+   "fieldtype": "Data",
+   "label": "Shipping Line",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_jsul",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "bol_no.manifest_no",
+   "fetch_if_empty": 1,
+   "fieldname": "manifest_no",
+   "fieldtype": "Data",
+   "label": "Manifest No",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "transaction_no.shipping_line_agent",
+   "fetch_if_empty": 1,
+   "fieldname": "shipping_line_agent",
+   "fieldtype": "Data",
+   "label": "Shipping Line Agent",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_qvfh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "bol_no.shipping_route_no",
+   "fetch_if_empty": 1,
+   "fieldname": "shipping_route_no",
+   "fieldtype": "Data",
+   "label": "Shipping Route No",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "transaction_no.agent_code",
+   "fetch_if_empty": 1,
+   "fieldname": "agent_code",
+   "fieldtype": "Data",
+   "label": "Agent Code",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "section_break_ocgw",
+   "fieldtype": "Section Break",
+   "label": "Status"
+  },
+  {
+   "fieldname": "column_break_dsrl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "bol_no.status",
+   "fetch_if_empty": 1,
+   "fieldname": "do_status",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "DO Status",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_kyrk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_avwm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "terminal_status",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Terminal Status",
+   "options": "Terminal Status"
+  },
+  {
+   "fieldname": "column_break_ekwd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "transaction_no.status",
+   "fetch_if_empty": 1,
+   "fieldname": "transaction_status",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Transaction Status",
+   "read_only": 1
+  },
+  {
+   "fieldname": "dec_date",
+   "fieldtype": "Date",
+   "label": "Dec Date"
+  },
+  {
+   "fetch_from": "bol_no.free_days",
+   "fetch_if_empty": 1,
+   "fieldname": "free_days",
+   "fieldtype": "Data",
+   "label": "Free Day's"
+  },
+  {
+   "fieldname": "column_break_nlfs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "duty_fees_date",
+   "fieldtype": "Date",
+   "label": "Duty Fees Date"
+  },
+  {
+   "fieldname": "column_break_lvdr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "exporter_importer.tax_id",
+   "fetch_if_empty": 1,
+   "fieldname": "vat_no",
+   "fieldtype": "Data",
+   "label": "VAT No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_swnh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "transaction_no.fash_authorization_no",
+   "fetch_if_empty": 1,
+   "fieldname": "authorization_no",
+   "fieldtype": "Data",
+   "label": "Authorization No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_prux",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_wisx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "terminal_remarks",
+   "fieldtype": "Long Text",
+   "label": "Terminal Remarks"
+  },
+  {
+   "fieldname": "column_break_gkip",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "office_remarks",
+   "fieldtype": "Long Text",
+   "label": "Office Remarks"
+  },
+  {
+   "fieldname": "column_break_xuwz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "port_remarks",
+   "fieldtype": "Long Text",
+   "label": "Port Remarks"
+  },
+  {
+   "fieldname": "section_break_wqbv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "table_myde",
+   "fieldtype": "Table",
+   "label": "Port Fee",
+   "options": "Port Fee"
+  },
+  {
+   "fieldname": "section_break_ofcq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_qmot",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "transaction_no.export_country",
+   "fetch_if_empty": 1,
+   "fieldname": "export_country",
+   "fieldtype": "Data",
+   "label": "Export Country",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_edmt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "transaction_no.import_country",
+   "fetch_if_empty": 1,
+   "fieldname": "import_country",
+   "fieldtype": "Data",
+   "label": "Import Country",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tab_2_tab",
+   "fieldtype": "Tab Break",
+   "label": "Shipment Details"
+  },
+  {
+   "default": "0",
+   "fetch_from": "transaction_no.fcl",
+   "fetch_if_empty": 1,
+   "fieldname": "fcl",
+   "fieldtype": "Check",
+   "label": "FCL",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_giat",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fetch_from": "transaction_no.cbm",
+   "fetch_if_empty": 1,
+   "fieldname": "cbm",
+   "fieldtype": "Check",
+   "label": "CBM",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_nmir",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fetch_from": "transaction_no.roro",
+   "fetch_if_empty": 1,
+   "fieldname": "roro",
+   "fieldtype": "Check",
+   "label": "RoRo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_cwef",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.fcl=='1'",
+   "fieldname": "fcl_list",
+   "fieldtype": "Table",
+   "label": "FCL LIst",
+   "options": "FCL"
+  },
+  {
+   "depends_on": "eval:doc.cbm=='1'",
+   "fieldname": "cbm_list",
+   "fieldtype": "Table",
+   "label": "CBM List",
+   "options": "CBM"
+  },
+  {
+   "depends_on": "eval:doc.roro=='1'",
+   "fieldname": "roro_list",
+   "fieldtype": "Table",
+   "label": "RoRo List",
+   "options": "RoRo"
+  },
+  {
+   "fieldname": "tab_3_tab",
+   "fieldtype": "Tab Break",
+   "label": "Attach"
+  },
+  {
+   "fieldname": "attach",
+   "fieldtype": "Table",
+   "options": "Document Attache"
+  },
+  {
+   "default": "Awaited",
+   "fieldname": "vessel_status",
+   "fieldtype": "Select",
+   "label": "Vessel Status",
+   "options": "Awaited\nOn Berth\nSailed"
+  },
+  {
+   "fieldname": "dec_status",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Dec Status",
+   "options": "Dec Status"
+  },
+  {
+   "default": "Direct",
+   "fieldname": "group_code",
+   "fieldtype": "Select",
+   "label": "Group Code",
+   "options": "Direct\nManual"
+  },
+  {
+   "fetch_from": "transaction_no.vessel",
+   "fetch_if_empty": 1,
+   "fieldname": "vessel",
+   "fieldtype": "Data",
+   "label": "Vessel",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "transaction_no.discharge_port",
+   "fetch_if_empty": 1,
+   "fieldname": "discharge_port",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "label": "Discharge Port",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "transaction_no.importer_no",
+   "fetch_if_empty": 1,
+   "fieldname": "importer_no",
+   "fieldtype": "Data",
+   "label": "Exp Imp No",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "transaction_no.bol_no",
+   "fetch_if_empty": 1,
+   "fieldname": "bol_no",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "BoL",
+   "options": "Delivery Order"
+  },
+  {
+   "fieldname": "section_break_zawm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "transaction_no.containers_qty",
+   "fieldname": "containers_qty",
+   "fieldtype": "Data",
+   "label": "Containers Qty"
+  },
+  {
+   "fieldname": "column_break_jwog",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "transaction_no.goods_type",
+   "fieldname": "goods_type",
+   "fieldtype": "Data",
+   "label": "Goods Type"
+  },
+  {
+   "fieldname": "column_break_qrhq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "transaction_no.no_of_packages",
+   "fieldname": "no_of_packages",
+   "fieldtype": "Data",
+   "label": "No of Packages"
+  },
+  {
+   "fieldname": "column_break_rzqs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "transaction_no.invoice_no",
+   "fetch_if_empty": 1,
+   "fieldname": "commercial_invoice_no",
+   "fieldtype": "Data",
+   "label": "Commercial Invoice No"
+  },
+  {
+   "fieldname": "hijri_discharge_date",
+   "fieldtype": "Data",
+   "label": "Hijri Discharge Date"
+  },
+  {
+   "fieldname": "hijri_demurrage_date",
+   "fieldtype": "Data",
+   "label": "Hijri Demurrage Date"
+  },
+  {
+   "fieldname": "section_break_oqcz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "transaction_jv_entries",
+   "fieldtype": "Table",
+   "label": "Transaction JV Entries",
+   "options": "Transaction JV Entries"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_calendar_and_gantt": 1,
+ "links": [],
+ "modified": "2025-10-06 22:59:05.044386",
+ "modified_by": "Administrator",
+ "module": "logistics",
+ "name": "Declaration Customs",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [],
+ "search_fields": "dec_no,bol_no,transaction_no",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

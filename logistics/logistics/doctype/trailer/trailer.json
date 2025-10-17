@@ -1,0 +1,233 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:trailer_no",
+ "creation": "2024-11-03 13:50:08.961857",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "trailer_no",
+  "trailer_type",
+  "column_break_dxxs",
+  "color",
+  "color_2",
+  "section_break_xtju",
+  "safety_license_plate",
+  "column_break_jbam",
+  "front",
+  "column_break_dmtl",
+  "right_side",
+  "column_break_aajz",
+  "lift_side",
+  "column_break_aoft",
+  "back",
+  "section_break_xmuf",
+  "length",
+  "column_break_nqvh",
+  "width",
+  "section_break_jbad",
+  "suspension_system",
+  "locks_on_a_trailer",
+  "axles_size",
+  "tayer_size",
+  "column_break_mbro",
+  "axles_on_a_trailer",
+  "measure_between_axles",
+  "wheels_on_an_axles",
+  "section_break_nmhh",
+  "trailer_weight",
+  "column_break_evgn",
+  "max_load"
+ ],
+ "fields": [
+  {
+   "fieldname": "trailer_no",
+   "fieldtype": "Data",
+   "label": "Trailer No",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "trailer_type",
+   "fieldtype": "Link",
+   "label": "Trailer Type",
+   "options": "trailer type"
+  },
+  {
+   "fieldname": "column_break_dxxs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "color",
+   "fieldtype": "Color",
+   "label": "Color 1"
+  },
+  {
+   "fieldname": "section_break_jbad",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "axles_on_a_trailer",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Axles on a Trailer",
+   "precision": "0"
+  },
+  {
+   "fieldname": "trailer_weight",
+   "fieldtype": "Float",
+   "label": "Trailer weight"
+  },
+  {
+   "fieldname": "suspension_system",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Suspension system",
+   "options": "Bojie\nAirbag\nLeaf Spring\nRigid",
+   "translatable": 1
+  },
+  {
+   "fieldname": "section_break_xmuf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "length",
+   "fieldtype": "Float",
+   "label": "Length"
+  },
+  {
+   "fieldname": "column_break_nqvh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "width",
+   "fieldtype": "Float",
+   "label": "Width"
+  },
+  {
+   "fieldname": "measure_between_axles",
+   "fieldtype": "Float",
+   "label": "Measure between Axles"
+  },
+  {
+   "fieldname": "column_break_mbro",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "locks_on_a_trailer",
+   "fieldtype": "Float",
+   "label": "locks on a Trailer"
+  },
+  {
+   "fieldname": "color_2",
+   "fieldtype": "Color",
+   "label": "Color 2"
+  },
+  {
+   "fieldname": "axles_size",
+   "fieldtype": "Data",
+   "label": "Axles size"
+  },
+  {
+   "fieldname": "wheels_on_an_axles",
+   "fieldtype": "Float",
+   "label": "Wheels on an Axles",
+   "precision": "0"
+  },
+  {
+   "fieldname": "section_break_nmhh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_evgn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "max_load",
+   "fieldtype": "Float",
+   "label": "Max Load",
+   "precision": "0"
+  },
+  {
+   "fieldname": "section_break_xtju",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "safety_license_plate",
+   "fieldtype": "Data",
+   "label": "Safety License Plate"
+  },
+  {
+   "fieldname": "column_break_jbam",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "front",
+   "fieldtype": "Check",
+   "label": "Front"
+  },
+  {
+   "fieldname": "column_break_dmtl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "right_side",
+   "fieldtype": "Check",
+   "label": "Right Side"
+  },
+  {
+   "fieldname": "column_break_aajz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "lift_side",
+   "fieldtype": "Check",
+   "label": "Lift Side"
+  },
+  {
+   "fieldname": "column_break_aoft",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "back",
+   "fieldtype": "Check",
+   "label": "Back"
+  },
+  {
+   "fieldname": "tayer_size",
+   "fieldtype": "Data",
+   "label": "Tayer Size"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-16 00:04:02.189201",
+ "modified_by": "Administrator",
+ "module": "logistics",
+ "name": "Trailer",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

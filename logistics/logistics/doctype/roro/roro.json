@@ -1,0 +1,72 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-10-07 22:50:52.580398",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "vin_no",
+  "specification_serial_number",
+  "unit_price",
+  "model_year",
+  "model",
+  "vehicle_load",
+  "gross_wt",
+  "engine_power"
+ ],
+ "fields": [
+  {
+   "fieldname": "vin_no",
+   "fieldtype": "Data",
+   "label": "VIN No"
+  },
+  {
+   "fieldname": "specification_serial_number",
+   "fieldtype": "Data",
+   "label": "Specification Serial Number"
+  },
+  {
+   "fieldname": "unit_price",
+   "fieldtype": "Currency",
+   "label": "Unit Price"
+  },
+  {
+   "fieldname": "model_year",
+   "fieldtype": "Int",
+   "label": "Model Year"
+  },
+  {
+   "fieldname": "model",
+   "fieldtype": "Data",
+   "label": "Model"
+  },
+  {
+   "fieldname": "vehicle_load",
+   "fieldtype": "Data",
+   "label": "Vehicle load"
+  },
+  {
+   "fieldname": "gross_wt",
+   "fieldtype": "Data",
+   "label": "Gross WT"
+  },
+  {
+   "fieldname": "engine_power",
+   "fieldtype": "Data",
+   "label": "Engine power"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-10-15 14:04:01.220229",
+ "modified_by": "Administrator",
+ "module": "logistics",
+ "name": "RoRo",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

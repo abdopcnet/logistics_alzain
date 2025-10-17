@@ -1,0 +1,355 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "prompt",
+ "creation": "2024-10-23 10:30:23.578050",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "customer",
+  "importer_no",
+  "column_break_ztas",
+  "transaction_no",
+  "bol_no",
+  "section_break_zibe",
+  "shipping_line",
+  "notify",
+  "column_break_xbma",
+  "shipping_line_agent",
+  "section_break_ojyy",
+  "vessel",
+  "column_break_dhsn",
+  "voyage_no",
+  "column_break_yxni",
+  "discharge_port",
+  "column_break_hmuu",
+  "voyage_no_copy",
+  "section_break_cfzo",
+  "delivery_order_no",
+  "delivery_order_date",
+  "column_break_ndun",
+  "manifest_no",
+  "manifest_date",
+  "column_break_tpeo",
+  "shipping_route_no",
+  "status",
+  "section_break_ijgj",
+  "fcl",
+  "column_break_efds",
+  "type_of_goods",
+  "cbm",
+  "column_break_thal",
+  "invoice_status",
+  "roro",
+  "section_break_mnuw",
+  "fcl_list",
+  "cbm_list",
+  "roro_list",
+  "section_break_glqb",
+  "empty_return_yard",
+  "column_break_mffv",
+  "empty_return_date",
+  "free_days",
+  "section_break_psze",
+  "column_break_twzn",
+  "table_uuzw",
+  "section_break_mbkv",
+  "transaction_jv_entries",
+  "attache_tab",
+  "document_attache"
+ ],
+ "fields": [
+  {
+   "fetch_from": "transaction_no.importer_no",
+   "fieldname": "importer_no",
+   "fieldtype": "Data",
+   "label": "Importer No"
+  },
+  {
+   "fieldname": "column_break_ztas",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_ojyy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "transaction_no.vessel",
+   "fieldname": "vessel",
+   "fieldtype": "Data",
+   "label": "Vessel"
+  },
+  {
+   "fieldname": "column_break_dhsn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "transaction_no.voyage_no",
+   "fieldname": "voyage_no",
+   "fieldtype": "Data",
+   "label": "Voyage No"
+  },
+  {
+   "fieldname": "column_break_yxni",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "voyage_no_copy",
+   "fieldtype": "Data",
+   "label": "Discharge Date"
+  },
+  {
+   "fieldname": "transaction_no",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Transaction No",
+   "options": "Transaction",
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_zibe",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "transaction_no.shipping_line",
+   "fetch_if_empty": 1,
+   "fieldname": "shipping_line",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Shipping Line"
+  },
+  {
+   "fieldname": "column_break_xbma",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "transaction_no.discharge_port",
+   "fieldname": "discharge_port",
+   "fieldtype": "Data",
+   "label": "Discharge Port"
+  },
+  {
+   "fieldname": "column_break_hmuu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_cfzo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "delivery_order_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Delivery Order No"
+  },
+  {
+   "fieldname": "manifest_no",
+   "fieldtype": "Data",
+   "label": "Manifest No"
+  },
+  {
+   "fieldname": "shipping_route_no",
+   "fieldtype": "Data",
+   "label": "Shipping Route No"
+  },
+  {
+   "fetch_from": "transaction_no.notify",
+   "fieldname": "notify",
+   "fieldtype": "Data",
+   "label": "Notify"
+  },
+  {
+   "fieldname": "delivery_order_date",
+   "fieldtype": "Date",
+   "label": "Delivery Order Date"
+  },
+  {
+   "fieldname": "column_break_ndun",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "manifest_date",
+   "fieldtype": "Date",
+   "label": "Manifest Date"
+  },
+  {
+   "fieldname": "column_break_tpeo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "empty_return_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Empty return Date"
+  },
+  {
+   "fieldname": "empty_return_yard",
+   "fieldtype": "Link",
+   "label": "Empty return yard",
+   "options": "Address"
+  },
+  {
+   "fieldname": "section_break_glqb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_mffv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "transaction_no.customer",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Not Linked\nLinked"
+  },
+  {
+   "fieldname": "section_break_mnuw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "invoice_status",
+   "fieldtype": "Link",
+   "label": "Invoice Status",
+   "options": "DO Status"
+  },
+  {
+   "fieldname": "section_break_psze",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "table_uuzw",
+   "fieldtype": "Table",
+   "label": "Agent Fee",
+   "options": "Agent Fee"
+  },
+  {
+   "fieldname": "free_days",
+   "fieldtype": "Int",
+   "label": "Free Day's"
+  },
+  {
+   "fieldname": "type_of_goods",
+   "fieldtype": "Data",
+   "label": "Type Of Goods"
+  },
+  {
+   "fieldname": "section_break_ijgj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fetch_from": "transaction_no.fcl",
+   "fieldname": "fcl",
+   "fieldtype": "Check",
+   "label": "FCL",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_efds",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fetch_from": "transaction_no.cbm",
+   "fieldname": "cbm",
+   "fieldtype": "Check",
+   "label": "CBM",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_thal",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fetch_from": "transaction_no.roro",
+   "fieldname": "roro",
+   "fieldtype": "Check",
+   "label": "RoRo",
+   "mandatory_depends_on": "eval:doc.roro=='1'",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.fcl=='1'",
+   "fieldname": "fcl_list",
+   "fieldtype": "Table",
+   "label": "FCL List",
+   "options": "FCL"
+  },
+  {
+   "depends_on": "eval:doc.cbm=='1'",
+   "fieldname": "cbm_list",
+   "fieldtype": "Table",
+   "label": "CBM List",
+   "options": "CBM"
+  },
+  {
+   "depends_on": "eval:doc.roro=='1'",
+   "fieldname": "roro_list",
+   "fieldtype": "Table",
+   "label": "RoRo List",
+   "options": "RoRo"
+  },
+  {
+   "fieldname": "attache_tab",
+   "fieldtype": "Tab Break",
+   "label": "Attache"
+  },
+  {
+   "fieldname": "document_attache",
+   "fieldtype": "Table",
+   "label": "Document Attache",
+   "options": "Document Attache"
+  },
+  {
+   "fetch_from": "transaction_no.shipping_line_agent",
+   "fieldname": "shipping_line_agent",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Shipping Line Agent"
+  },
+  {
+   "fetch_from": "transaction_no.bol_no",
+   "fieldname": "bol_no",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "BoL",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "section_break_mbkv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "transaction_jv_entries",
+   "fieldtype": "Table",
+   "label": "Transaction JV Entries",
+   "options": "Transaction JV Entries"
+  },
+  {
+   "fieldname": "column_break_twzn",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "is_calendar_and_gantt": 1,
+ "links": [],
+ "modified": "2025-10-06 23:01:07.885375",
+ "modified_by": "Administrator",
+ "module": "logistics",
+ "name": "Delivery Order",
+ "naming_rule": "Set by user",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

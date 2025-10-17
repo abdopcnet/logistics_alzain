@@ -1,0 +1,176 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-10-31 13:59:56.961570",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_qabe",
+  "customer_name",
+  "column_break_kdbq",
+  "address",
+  "section_break_ujvx",
+  "transaction_no",
+  "column_break_izwh",
+  "bol_no",
+  "column_break_dhbr",
+  "bol_no_copy",
+  "column_break_wyrq",
+  "doc_no",
+  "section_break_svzy",
+  "port",
+  "terminal",
+  "demurrage_date",
+  "column_break_sldg",
+  "shipping_agent",
+  "empty_return_yard",
+  "empty_return_date",
+  "section_break_tuaa",
+  "shipment_container_details",
+  "cbm_shipment_details",
+  "roro_shipment_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_izwh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_tuaa",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "shipment_container_details",
+   "fieldtype": "Table",
+   "label": "Shipment Container Details ",
+   "options": "FCL"
+  },
+  {
+   "fieldname": "transaction_no",
+   "fieldtype": "Link",
+   "label": "Transaction No",
+   "options": "Transaction"
+  },
+  {
+   "fieldname": "bol_no",
+   "fieldtype": "Data",
+   "label": "BoL No"
+  },
+  {
+   "fieldname": "bol_no_copy",
+   "fieldtype": "Data",
+   "label": "DO No"
+  },
+  {
+   "fieldname": "roro_shipment_details",
+   "fieldtype": "Table",
+   "label": "RoRo Shipment Details",
+   "options": "RoRo"
+  },
+  {
+   "fieldname": "cbm_shipment_details",
+   "fieldtype": "Table",
+   "label": "CBM Shipment Details",
+   "options": "CBM"
+  },
+  {
+   "fetch_from": "transaction_no.customer",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "fieldname": "doc_no",
+   "fieldtype": "Data",
+   "label": "Doc No"
+  },
+  {
+   "fieldname": "section_break_svzy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "demurrage_date",
+   "fieldtype": "Date",
+   "label": "Demurrage Date"
+  },
+  {
+   "fieldname": "column_break_sldg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "empty_return_date",
+   "fieldtype": "Date",
+   "label": "Empty Return Date"
+  },
+  {
+   "fieldname": "section_break_ujvx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_dhbr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_wyrq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_qabe",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "port",
+   "fieldtype": "Data",
+   "label": "Port"
+  },
+  {
+   "fieldname": "shipping_agent",
+   "fieldtype": "Data",
+   "label": "Shipping Agent"
+  },
+  {
+   "fieldname": "column_break_kdbq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address"
+  },
+  {
+   "fieldname": "terminal",
+   "fieldtype": "Data",
+   "label": "Terminal"
+  },
+  {
+   "fieldname": "empty_return_yard",
+   "fieldtype": "Data",
+   "label": "Empty Return Yard"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_calendar_and_gantt": 1,
+ "links": [],
+ "modified": "2024-12-09 15:17:49.386852",
+ "modified_by": "Administrator",
+ "module": "logistics",
+ "name": "Shipment Details",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

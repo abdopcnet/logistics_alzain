@@ -1,0 +1,159 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{#####}",
+ "creation": "2025-06-14 02:33:52.448127",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "journal_entry_no",
+  "title",
+  "posting_date",
+  "total_debit",
+  "user_remark",
+  "column_break_aaqt",
+  "owner_user",
+  "creation_on",
+  "modified_by_user",
+  "modified_on",
+  "section_break_lwwx",
+  "custom_transaction",
+  "custom_bol_no",
+  "column_break_rtue",
+  "custom_delivery_order",
+  "custom_declaration_customs"
+ ],
+ "fields": [
+  {
+   "columns": 1,
+   "fetch_from": "journal_entry_no.posting_date",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "posting_date",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fetch_from": "journal_entry_no.title",
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "title",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fetch_from": "journal_entry.posting_date",
+   "fieldname": "modified_on",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "modified_on",
+   "read_only": 1
+  },
+  {
+   "fieldname": "owner_user",
+   "fieldtype": "Link",
+   "label": "owner_user",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "modified_by_user",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "modified_by_user",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "journal_entry_no",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "journal_entry_no",
+   "options": "Journal Entry",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "journal_entry_no.posting_date",
+   "fieldname": "creation_on",
+   "fieldtype": "Date",
+   "label": "creation_on",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "total_debit",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "total_debit",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "journal_entry_no.user_remark",
+   "fieldname": "user_remark",
+   "fieldtype": "Small Text",
+   "label": "user_remark",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "journal_entry_no.custom_transaction",
+   "fieldname": "custom_transaction",
+   "fieldtype": "Link",
+   "label": "custom_transaction",
+   "options": "Transaction",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "journal_entry_no.custom_bol_no",
+   "fieldname": "custom_bol_no",
+   "fieldtype": "Data",
+   "label": "custom_bol_no",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "journal_entry_no.custom_declaration_customs",
+   "fieldname": "custom_declaration_customs",
+   "fieldtype": "Link",
+   "label": "custom_declaration_customs",
+   "options": "Declaration Customs",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "journal_entry_no.custom_delivery_order",
+   "fieldname": "custom_delivery_order",
+   "fieldtype": "Link",
+   "label": "custom_delivery_order",
+   "options": "Delivery Order",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_lwwx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_rtue",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_aaqt",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-06-14 04:38:42.837649",
+ "modified_by": "Administrator",
+ "module": "logistics",
+ "name": "Transaction JV Entries",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

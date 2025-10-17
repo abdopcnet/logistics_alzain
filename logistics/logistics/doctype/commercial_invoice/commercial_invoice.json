@@ -1,0 +1,174 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-07-10 14:47:10.216537",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "transaction_no",
+  "column_break_xujw",
+  "bol_no",
+  "column_break_pmvw",
+  "invoice_no",
+  "column_break_xqre",
+  "dec_no",
+  "section_break_pxcf",
+  "importer",
+  "importer_no",
+  "incoterm",
+  "shipping_cost",
+  "insurance_no",
+  "column_break_epyg",
+  "country",
+  "currency",
+  "total_qty_of_items",
+  "column_break_sfak",
+  "exporter",
+  "invoice_date",
+  "grand_total",
+  "section_break_wszf",
+  "table_kygv"
+ ],
+ "fields": [
+  {
+   "fieldname": "invoice_no",
+   "fieldtype": "Data",
+   "label": "Invoice No"
+  },
+  {
+   "fieldname": "incoterm",
+   "fieldtype": "Link",
+   "label": "Incoterm",
+   "options": "Incoterm"
+  },
+  {
+   "fieldname": "importer",
+   "fieldtype": "Link",
+   "label": "Importer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "exporter",
+   "fieldtype": "Data",
+   "label": "Exporter"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country"
+  },
+  {
+   "fieldname": "bol_no",
+   "fieldtype": "Link",
+   "label": "BoL No",
+   "options": "BoL"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "invoice_date",
+   "fieldtype": "Date",
+   "label": "Invoice Date"
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Float",
+   "label": "Grand Total"
+  },
+  {
+   "fieldname": "table_kygv",
+   "fieldtype": "Table",
+   "options": "Inv HS"
+  },
+  {
+   "fieldname": "column_break_epyg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.incoterm=='FOB' || doc.incoterm == 'EXW'",
+   "fieldname": "shipping_cost",
+   "fieldtype": "Float",
+   "label": "Shipping Cost"
+  },
+  {
+   "depends_on": "eval:doc.incoterm=='CIF'",
+   "fieldname": "insurance_no",
+   "fieldtype": "Data",
+   "label": "Insurance No"
+  },
+  {
+   "fieldname": "section_break_wszf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_qty_of_items",
+   "fieldtype": "Data",
+   "label": "Total Qty of Item's "
+  },
+  {
+   "fieldname": "dec_no",
+   "fieldtype": "Int",
+   "label": "Dec No"
+  },
+  {
+   "fieldname": "column_break_sfak",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_xujw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_pmvw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_xqre",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_pxcf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "importer_no",
+   "fieldtype": "Data",
+   "label": "Importer No"
+  },
+  {
+   "fieldname": "transaction_no",
+   "fieldtype": "Link",
+   "label": "Transacion No",
+   "options": "Transaction"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-10-23 11:27:50.726553",
+ "modified_by": "Administrator",
+ "module": "logistics",
+ "name": "commercial invoice",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,100 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-01-22 21:27:11.263229",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "port_section",
+  "port_code",
+  "column_break_dnvg",
+  "port_name",
+  "column_break_ogii",
+  "port_type",
+  "column_break_nans",
+  "city",
+  "column_break_fqea",
+  "country"
+ ],
+ "fields": [
+  {
+   "fieldname": "port_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Port code",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_dnvg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "port_name",
+   "fieldtype": "Data",
+   "label": "Port name"
+  },
+  {
+   "fieldname": "column_break_ogii",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "port_type",
+   "fieldtype": "Select",
+   "label": "Port type",
+   "options": "\nAirport\nSeaport\nLandport"
+  },
+  {
+   "fieldname": "column_break_nans",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "City",
+   "options": "City"
+  },
+  {
+   "fieldname": "port_section",
+   "fieldtype": "Section Break",
+   "label": "Port"
+  },
+  {
+   "fieldname": "column_break_fqea",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-13 15:00:01.101200",
+ "modified_by": "Administrator",
+ "module": "logistics",
+ "name": "Port",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

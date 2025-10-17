@@ -1,0 +1,147 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:hs_code",
+ "creation": "2024-01-18 21:23:06.847219",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "hs_code",
+  "arabic",
+  "duty_rate",
+  "column_break_mipx",
+  "english",
+  "date",
+  "subject",
+  "procedures",
+  "extra_requires",
+  "section_break_fkvt",
+  "arabic_item_list",
+  "column_break_onms",
+  "english_item_list",
+  "section_break_bvxw",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "hs_code",
+   "fieldtype": "Data",
+   "label": "HS code",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "arabic",
+   "fieldtype": "Text",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Item Arabic Name"
+  },
+  {
+   "fieldname": "english",
+   "fieldtype": "Text",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Item English Name"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Data",
+   "label": "Date"
+  },
+  {
+   "fieldname": "duty_rate",
+   "fieldtype": "Data",
+   "label": "Duty Rate"
+  },
+  {
+   "fieldname": "procedures",
+   "fieldtype": "Data",
+   "label": "Procedures"
+  },
+  {
+   "fieldname": "column_break_mipx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_bvxw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "section_break_fkvt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "arabic_item_list",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "label": "Arabic Item List"
+  },
+  {
+   "fieldname": "column_break_onms",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "english_item_list",
+   "fieldtype": "Data",
+   "label": "English Item List"
+  },
+  {
+   "fieldname": "subject",
+   "fieldtype": "Select",
+   "label": "Subject To",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "extra_requires",
+   "fieldtype": "Data",
+   "label": "Extra Requires"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-10-02 14:23:11.936748",
+ "modified_by": "Administrator",
+ "module": "logistics",
+ "name": "HS code",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Blue",
+   "title": "123"
+  },
+  {
+   "color": "Green",
+   "title": "2"
+  }
+ ],
+ "track_changes": 1
+}

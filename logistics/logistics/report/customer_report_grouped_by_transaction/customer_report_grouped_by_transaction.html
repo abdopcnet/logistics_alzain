@@ -1,0 +1,105 @@
+<!-- Modified on 30-06-2025 -->
+
+<style type="text/css">
+    body, html {
+        margin-top: 10px;
+        padding: 0;
+        width: 100%;
+        height: auto;
+        font-family: Arial, sans-serif;
+    }
+    .title-letter-spacing {
+        letter-spacing: .2rem;
+    }
+    @media print {
+        @page {
+            size: A4;
+            margin-top: 10mm;
+        }
+        .page-break {
+            page-break-before: always;
+            margin-top: 10mm;
+        }
+        thead {
+            display: table-header-group;
+        }
+        tfoot {
+            display: table-footer-group;
+        }
+        th, td {
+            padding: 1px;
+            border: 1px solid black;
+        }
+        .no-print {
+            display: none !important;
+        }
+    }
+</style>
+<br>
+<!-- <h2 class="text-center">{%= __("Statement of Account") %}</h2> -->
+<div style="font-family:Arial">
+	<div>
+		<div class="title-letter-spacing" style="text-align:center; font-size:15px; text-decoration:underline;">
+			<b>
+				{%= __("تقرير حساب العميل") %}<br>
+				{% if (filters.party_name) { %}
+					<br>{%= filters.party_name %}
+				{% } else if (filters.party && filters.party.length) { %}
+					<br>{%= filters.party %}
+				{% } else { %}
+					<br>{%= __("كل العملاء") %}
+				{% } %}
+			</b>
+		</div>
+		<div style="text-align:center; font-size:13px;">
+			<b>
+				{%= __("{0} إلى {1}", [frappe.datetime.str_to_user(filters.from_date), frappe.datetime.str_to_user(filters.to_date)]) %}<br><br>
+			</b>
+		</div>
+	</div>
+	<table style="width:100%; font-size: 11px" class="table table-bordered">
+		<thead>
+			<tr class="title-letter-spacing" style="text-align: center; font-weight:bold">
+				<th style="width: 12%">{%= __("تاريخ القيد") %}</th>
+				<th style="width: 15%">{%= __("نوع السند")%}</th>
+				<th style="width: 25%">{%= __("رقم السند") %}</th>
+				<th style="width: 15%">{%= __("المعاملة") %}</th>
+				<th style="width: 15%">{%= __("مدين") %}</th>
+				<th style="width: 18%">{%= __("دائن") %}</th>
+				<th style="width: 18%">{%= __("الرصيد المتحرك") %}</th>
+				<!-- {#
+				{% for(var i=0; i<columns.length; i++) { var col=columns[i]; %}
+					<td style="border: 1.5px solid black;">{%= __(col.label) %}</td>
+				{% } %}
+				#} -->
+			</tr>
+		</thead>
+		<tbody>
+			<!-- {#
+			{% for(var i=0, l=data.length; i<l; i++) { var row=data[i]; %}
+				<tr style="border-bottom: 1px solid black">
+					{% for(var j=0; j<columns.length; j++) { var col=columns[j]; %}
+						<td>{%= row[col.fieldname] || '' %}</td>
+					{% } %}
+				</tr>
+			
+			{% } %}
+			#} -->
+			{% for(var i=0, l=data.length; i<l; i++) { %}
+			<tr>
+				<td>  {%= frappe.datetime.str_to_user(data[i].posting_date) %} </td>
+				<td>  {%= data[i].voucher_type %} </td>
+				<td>  {%= data[i].voucher_no %} </td>
+				<td>  {%= data[i].transaction %} </td>
+				<td>  {%= format_currency(data[i].debit,  data[i].account_currency)  %} </td>
+				<td>  {%= format_currency(data[i].credit,  data[i].account_currency)  %} </td>
+				<td>  {%= format_currency(data[i].balance,  data[i].account_currency)  %} </td>
+				
+			</tr>
+			{% } %}
+       
+
+		</tbody>
+	</table>
+	<p class="text-right text-muted">{%= __("تم الطباعة بتاريخ {0}", [frappe.datetime.str_to_user(frappe.datetime.get_datetime_as_string())]) %}</p>
+</div>

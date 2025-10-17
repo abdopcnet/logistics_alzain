@@ -1,0 +1,101 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Purchase Order",
+  "enabled": 1,
+  "modified": "2025-08-13 06:56:25.726584",
+  "module": "logistics",
+  "name": "fetch_trips_for_supplier",
+  "script": "// Trigger when supplier field is changed in Purchase Order\nfrappe.ui.form.on('Purchase Order', {\n    supplier: function (frm) {\n        if (frm.doc.supplier) {\n            frm.clear_table('items'); \n\n            // Fetch Trips where transporter matches the selected supplier\n            frappe.call({\n                method: 'frappe.client.get_list',\n                args: {\n                    doctype: 'Trips',\n                    filters: {\n                        transporter: frm.doc.supplier\n                    },\n                    fields: ['name', 'transaction_no', 'customer', 'truck_no'] \n                },\n                callback: function (response) {\n                    if (response.message && response.message.length > 0) {\n                        const trip = response.message[0]; \n                        const trip_name = trip.name;\n\n                        // Load the selected Trip document\n                        frappe.model.with_doc('Trips', trip_name, function () {\n                            const trip_doc = frappe.model.get_doc('Trips', trip_name);\n                            \n                            if (trip_doc.table_ymko && trip_doc.table_ymko.length > 0) {\n                                // Loop through table_ymko and add rows to Purchase Order items\n                                for (const source_row of trip_doc.table_ymko) {\n                                    const target_row = frm.add_child('items');\n\n                                    // Map fields from Trips.table_ymko to Purchase Order items\n                                    target_row.item_code = source_row.item;\n                                    target_row.qty = source_row.qty;\n                                    target_row.custom_container_no = source_row.container_no;\n                                    target_row.custom_container_type = source_row.container_type;\n\n                                    // Map additional fields from Trips to Purchase Order items\n                                    target_row.custom_transaction_no = trip_doc.transaction_no;\n                                    target_row.custom_customer = trip_doc.customer;\n                                    target_row.custom_truck_no = trip_doc.truck_no;\n                                    target_row.custom_trip = trip_doc.name;\n                                }\n\n                                // Refresh the items table in Purchase Order\n                                frm.refresh_field('items'); \n                            } else {\n                                frappe.msgprint(__('No data found in table_ymko for the selected Trip.'));\n                            }\n                        });\n                    } else {\n                        frappe.msgprint(__('No Trips found for the selected supplier.'));\n                    }\n                }\n            });\n        } else {\n            frappe.msgprint(__('Please select a supplier.'));\n        }\n    }\n});\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Item",
+  "enabled": 1,
+  "modified": "2025-04-09 10:13:36.634619",
+  "module": "logistics",
+  "name": "Item_update_custom_supplier_Dynamic",
+  "script": "frappe.ui.form.on('Item', {\r\n    setup: function(frm) {\r\n        // تحديث أولي عند تحميل النموذج\r\n        frm.trigger('update_supplier_field');\r\n    },\r\n    custom_party_type: function(frm) {\r\n        // تحديث عند تغيير نوع الطرف\r\n        frm.trigger('update_supplier_field');\r\n    },\r\n    update_supplier_field: function(frm) {\r\n        if(frm.doc.custom_party_type) {\r\n            // إعدادات إضافية لضمان العمل\r\n            frm.fields_dict.custom_supplier.df.options = frm.doc.custom_party_type;\r\n            frm.fields_dict.custom_supplier.refresh();\r\n            frm.refresh_field('custom_supplier');\r\n        }\r\n    }\r\n});",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Sales Invoice",
+  "enabled": 0,
+  "modified": "2025-08-14 04:45:03.499287",
+  "module": "logistics",
+  "name": "sales_lnvoice_list_view",
+  "script": "frappe.listview_settings['Sales Invoice'] = {\r\n    onload: function(listview) {\r\n        const desired_fields = [\r\n            { fieldname: \"status\", label: \"Status\" },\r\n            { fieldname: \"title\", label: \"Title\" },\r\n            { fieldname: \"posting_date\", label: \"Date\" },\r\n            { fieldname: \"grand_total\", label: \"Grand Total\" },\r\n            { fieldname: \"custom_total_expenses\", label: \"Total Expenses\" },\r\n            { fieldname: \"paid_amount\", label: \"Paid Amount\" },\r\n            { fieldname: \"custom_bol_no\", label: \"BoL\" },\r\n            { fieldname: \"transaction\", label: \"Transaction\" }\r\n        ];\r\n\r\n        frappe.call({\r\n            method: \"frappe.desk.listview.get_list_settings\",\r\n            args: { doctype: \"Sales Invoice\" },\r\n            callback: function(r) {\r\n                let current_fields = [];\r\n                if (r.message && r.message.fields) {\r\n                    try {\r\n                        current_fields = JSON.parse(r.message.fields);\r\n                    } catch (e) {\r\n                        current_fields = [];\r\n                    }\r\n                }\r\n\r\n                if (JSON.stringify(current_fields) !== JSON.stringify(desired_fields)) {\r\n                    frappe.call({\r\n                        method: \"frappe.desk.doctype.list_view_settings.list_view_settings.save_listview_settings\",\r\n                        args: {\r\n                            doctype: \"Sales Invoice\",\r\n                            listview_settings: JSON.stringify({\r\n                                fields: JSON.stringify(desired_fields),\r\n                                total_fields: 10\r\n                            }),\r\n                            removed_listview_fields: JSON.stringify([])\r\n                        },\r\n                        callback: function(res) {\r\n                            frappe.show_alert({message: __('List view updated, reloading...'), indicator: 'green'});\r\n                            setTimeout(() => location.reload(), 800);\r\n                        }\r\n                    });\r\n                }\r\n            }\r\n        });\r\n    }\r\n};",
+  "view": "List"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Sales Invoice",
+  "enabled": 1,
+  "modified": "2025-08-13 03:43:11.667363",
+  "module": "logistics",
+  "name": "return_sales_invoice",
+  "script": "frappe.ui.form.on('Sales Invoice', {\r\n    refresh(frm) {\r\n        setup_return_invoice(frm);\r\n    },\r\n    \r\n    is_return(frm) {\r\n        if (frm.doc.is_return) {\r\n            apply_return_settings(frm);\r\n        } else {\r\n            clear_return_settings(frm);\r\n        }\r\n    }\r\n});\r\n\r\nfunction setup_return_invoice(frm) {\r\n    if (frm.doc.is_return) {\r\n        apply_return_settings(frm);\r\n    }\r\n}\r\n\r\nfunction apply_return_settings(frm) {\r\n    // Set naming series for returns\r\n    if (!frm.doc.naming_series || !frm.doc.naming_series.includes('RET')) {\r\n        frm.set_value('naming_series', 'ACC-SINV-RET-.YYYY.-');\r\n    }\r\n\r\n    // Flip custom_expenses_and_grand value to negative (if not already negative)\r\n    if (frm.doc.custom_expenses_and_grand > 0) {\r\n        frm.set_value('custom_expenses_and_grand', -Math.abs(frm.doc.custom_expenses_and_grand));\r\n    } else if (frm.doc.custom_expenses_and_grand < 0) {\r\n        // Already negative, do nothing (optional)\r\n    }\r\n\r\n    // Refresh the form to apply changes\r\n    frm.refresh_fields();\r\n}\r\n\r\nfunction clear_return_settings(frm) {\r\n    // Reset naming series if it's the return series\r\n    if (frm.doc.naming_series && frm.doc.naming_series.includes('RET')) {\r\n        frm.set_value('naming_series', '');\r\n    }\r\n    \r\n     // Flip custom_expenses_and_grand value to positive (if not already positive)\r\n    if (frm.doc.custom_expenses_and_grand < 0) {\r\n        frm.set_value('custom_expenses_and_grand', Math.abs(frm.doc.custom_expenses_and_grand));\r\n    } else if (frm.doc.custom_expenses_and_grand > 0) {\r\n        // Already positive, do nothing (optional)\r\n    }\r\n}",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Sales Invoice",
+  "enabled": 1,
+  "modified": "2025-08-13 03:43:19.097456",
+  "module": "logistics",
+  "name": "prevent_edit_rate_for_priced_items_sales_invoice",
+  "script": "// CSS لجعل حقل readonly يبدو مقفولاً في جدول الاصناف\r\nfrappe.ui.form.on('Sales Invoice', {\r\n    refresh: function(frm) {\r\n        // ضف الـ CSS مرة واحدة في الصفحة\r\n        if (!frm.__si_rate_css_added) {\r\n            $('<style>')\r\n              .prop('type', 'text/css')\r\n              .html('.grid-row td[data-fieldname=\"rate\"] input[readonly] { background-color: #f5f5f5; }')\r\n              .appendTo('head');\r\n            frm.__si_rate_css_added = true;\r\n        }\r\n\r\n        // لكل صف عند التحميل أو التحديث\r\n        (frm.doc.items || []).forEach(d => {\r\n            let grid_row = frm.fields_dict.items.grid.grid_rows_by_docname[d.name];\r\n            if (!grid_row) return;\r\n            let $input = grid_row.wrapper.find('input[data-fieldname=\"rate\"]');\r\n            if (d.rate && d.rate > 0) {\r\n                $input.prop('readonly', true);\r\n            } else {\r\n                $input.prop('readonly', false);\r\n            }\r\n        });\r\n    }\r\n});\r\n\r\n// عند إضافة أو تغيير صنف أو سعر في صف مفرد\r\nfrappe.ui.form.on('Sales Invoice Item', {\r\n    item_code: function(frm, cdt, cdn) {\r\n        frappe.after_ajax(() => {\r\n            let row = locals[cdt][cdn];\r\n            let grid_row = frm.fields_dict.items.grid.grid_rows_by_docname[cdn];\r\n            if (!grid_row) return;\r\n            let $input = grid_row.wrapper.find('input[data-fieldname=\"rate\"]');\r\n            $input.prop('readonly', !!(row.rate && row.rate > 0));\r\n        });\r\n    },\r\n    rate: function(frm, cdt, cdn) {\r\n        // يطبق نفس المنطق لو تم تعديل السعر يدوياً\r\n        let row = locals[cdt][cdn];\r\n        let grid_row = frm.fields_dict.items.grid.grid_rows_by_docname[cdn];\r\n        if (!grid_row) return;\r\n        let $input = grid_row.wrapper.find('input[data-fieldname=\"rate\"]');\r\n        $input.prop('readonly', !!(row.rate && row.rate > 0));\r\n    }\r\n});\r\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Sales Invoice",
+  "enabled": 1,
+  "modified": "2025-08-13 03:43:11.583411",
+  "module": "logistics",
+  "name": "ensure_sales_invoice_dates_for_zatca",
+  "script": "frappe.ui.form.on('Sales Invoice', {\r\n    refresh: function(frm) {\r\n        // تشغيل السكربت فقط إذا كانت الفاتورة في حالة Draft\r\n        if (frm.doc.docstatus === 0) {\r\n            // تعيين تاريخ اليوم في posting_date و due_date\r\n            frm.set_value('posting_date', frappe.datetime.get_today());\r\n            frm.set_value('due_date', frappe.datetime.get_today());\r\n            \r\n            // مسح جميع سطور جدول الدفع\r\n            frm.clear_table('payment_schedule');\r\n            frm.refresh_field('payment_schedule');\r\n        }\r\n    }\r\n});",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Sales Invoice",
+  "enabled": 1,
+  "modified": "2025-08-13 03:43:11.533367",
+  "module": "logistics",
+  "name": "clear_tax_category_sales_invoice",
+  "script": "frappe.ui.form.on('Sales Invoice', {\r\n    validate: function(frm) {\r\n        clear_tax_fields_if_draft(frm);\r\n    }\r\n});\r\n\r\nfunction clear_tax_fields_if_draft(frm) {\r\n    if (frm.doc.docstatus === 0) {\r\n        frm.set_value('taxes_and_charges', '');\r\n        frm.set_value('tax_category', '');\r\n    }\r\n}\r\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Transaction",
+  "enabled": 1,
+  "modified": "2025-10-06 22:15:03.045060",
+  "module": "logistics",
+  "name": "Transaction Calculate Total Expenses",
+  "script": "frappe.ui.form.on('Transaction', {\n    refresh: function(frm) {\n        // حساب المجموع عند تحميل النموذج\n        calculate_total_expenses(frm);\n    },\n    \n    table_clyq_add: function(frm, cdt, cdn) {\n        setTimeout(() => {\n            calculate_total_expenses(frm);\n        }, 100);\n    },\n    \n    table_clyq_remove: function(frm, cdt, cdn) {\n        setTimeout(() => {\n            calculate_total_expenses(frm);\n        }, 100);\n    }\n});\n\n// استخدم event عام لتغيرات الجدول\nfrappe.ui.form.on('Transaction Item', {  // تأكد من اسم child doctype الصحيح\n    fee: function(frm, cdt, cdn) {\n        calculate_total_expenses(frm);\n    }\n});\n\nfunction calculate_total_expenses(frm) {\n    let total = 0;\n    \n    if (frm.doc.table_clyq) {\n        frm.doc.table_clyq.forEach(function(row) {\n            if (row.fee) {\n                total += parseFloat(row.fee) || 0;\n            }\n        });\n    }\n    \n    frm.set_value('total_expenses', total);\n    frm.refresh_field('total_expenses');\n}",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Sales Invoice",
+  "enabled": 1,
+  "modified": "2025-10-10 22:47:51.216079",
+  "module": "logistics",
+  "name": "Check Transaction Exists in Sales Invoice",
+  "script": "frappe.ui.form.on('Sales Invoice', {\n    transaction: function(frm) {\n        if (frm.doc.transaction) {\n            check_transaction_exists(frm);\n        }\n    },\n    \n    refresh: function(frm) {\n        // التحقق عند تحميل الفاتورة إذا كان الحقل مليء\n        if (frm.doc.transaction) {\n            check_transaction_exists(frm);\n        }\n    }\n});\n\nfunction check_transaction_exists(frm) {\n    frappe.call({\n        method: 'frappe.client.get_list',\n        args: {\n            doctype: 'Sales Invoice',\n            filters: [\n                ['transaction', '=', frm.doc.transaction],\n                ['name', '!=', frm.doc.name] // استثناء الفاتورة الحالية\n            ],\n            fields: ['name', 'posting_date', 'customer', 'custom_expenses_and_grand']\n        },\n        callback: function(r) {\n            if (r.message && r.message.length > 0) {\n                let existing_invoice = r.message[0];\n                \n                frappe.msgprint({\n                    title: __('تنبيه - رقم المعاملة مكرر'),\n                    indicator: 'orange',\n                    message: __(`\n                        <div style=\"direction: rtl; text-align: right;\">\n                            <b>رقم المعاملة موجود مسبقاً!</b>\n                            <br><br>\n                            <b>رقم الفاتورة:</b> ${existing_invoice.name}<br>\n                            <b>التاريخ:</b> ${existing_invoice.posting_date}<br>\n                            <b>العميل:</b> ${existing_invoice.customer}<br>\n                            <b>المبلغ:</b> ${format_currency(existing_invoice.custom_expenses_and_grand)}\n                        </div>   \n                    `)\n                });\n                \n                // تغيير لون الحقل للإشارة إلى الخطأ\n                frm.fields_dict.transaction.$input.css('border-color', '#e74c3c');\n            } else {\n                // إرجاع اللون إلى الطبيعي إذا كان الرقم غير مكرر\n                frm.fields_dict.transaction.$input.css('border-color', '#d1d8dd');\n            }\n        }\n    });\n}\n",
+  "view": "Form"
+ }
+]

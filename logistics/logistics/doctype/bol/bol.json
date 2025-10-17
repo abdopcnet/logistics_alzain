@@ -1,0 +1,376 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "hash",
+ "creation": "2024-07-04 17:10:43.677662",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "importer",
+  "importer_no",
+  "transaction_no",
+  "attach",
+  "column_break_vbig",
+  "bol_no",
+  "bol_type",
+  "port_type",
+  "dec_no",
+  "status",
+  "section_break_fnac",
+  "shipping_line",
+  "notify",
+  "column_break_hgvh",
+  "agent_name",
+  "agent_code",
+  "section_break_qcnv",
+  "vessel",
+  "loading_port",
+  "departure_date",
+  "column_break_vvqo",
+  "voyage__flight_num",
+  "discharge_port",
+  "discharge_date",
+  "section_break_gxpp",
+  "delivery_order_no",
+  "delivery_order_date",
+  "column_break_wmhi",
+  "manifest_no",
+  "manifest_date",
+  "column_break_udrn",
+  "shipping_route_no",
+  "section_break_qihb",
+  "no_of_packages",
+  "column_break_npux",
+  "unit_of_packages",
+  "column_break_gnrx",
+  "goods_type",
+  "column_break_wrnl",
+  "weight",
+  "section_break_tzgn",
+  "fcl",
+  "column_break_iirt",
+  "lcl",
+  "column_break_qsdq",
+  "cbm",
+  "column_break_mhrx",
+  "roro",
+  "section_break_itde",
+  "fcl_list",
+  "cbm_list",
+  "roro_list",
+  "section_break_iwqy",
+  "empty_return_yard",
+  "column_break_mvfy",
+  "return_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "bol_type",
+   "fieldtype": "Link",
+   "label": "BoL Type",
+   "options": "BoL Type"
+  },
+  {
+   "fieldname": "section_break_qihb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "no_of_packages",
+   "fieldtype": "Data",
+   "label": "No of Packages"
+  },
+  {
+   "fieldname": "unit_of_packages",
+   "fieldtype": "Link",
+   "label": "Unit of Packages",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "goods_type",
+   "fieldtype": "Data",
+   "label": "Goods Type"
+  },
+  {
+   "fetch_from": "transaction_no.importer_no",
+   "fieldname": "importer_no",
+   "fieldtype": "Int",
+   "label": "Importer No"
+  },
+  {
+   "fieldname": "port_type",
+   "fieldtype": "Data",
+   "label": "Port Type"
+  },
+  {
+   "fieldname": "dec_no",
+   "fieldtype": "Data",
+   "label": "Dec NO"
+  },
+  {
+   "fieldname": "section_break_fnac",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "shipping_line",
+   "fieldtype": "Link",
+   "label": "Shipping Line",
+   "options": "Shipping Line"
+  },
+  {
+   "fieldname": "notify",
+   "fieldtype": "Link",
+   "label": "Notify",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "agent_name",
+   "fieldtype": "Link",
+   "label": "Agent Name",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "agent_code",
+   "fieldtype": "Data",
+   "label": "Agent Code"
+  },
+  {
+   "fieldname": "section_break_qcnv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "vessel",
+   "fieldtype": "Link",
+   "label": "Vessel",
+   "options": "ship"
+  },
+  {
+   "fieldname": "discharge_port",
+   "fieldtype": "Link",
+   "label": "Discharge Port",
+   "options": "Port"
+  },
+  {
+   "fieldname": "loading_port",
+   "fieldtype": "Link",
+   "label": "Loading Port",
+   "options": "Port"
+  },
+  {
+   "fieldname": "departure_date",
+   "fieldtype": "Date",
+   "label": "Departure Date"
+  },
+  {
+   "fieldname": "discharge_date",
+   "fieldtype": "Date",
+   "label": "Discharge Date"
+  },
+  {
+   "fieldname": "section_break_gxpp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "delivery_order_no",
+   "fieldtype": "Int",
+   "label": "Delivery Order No"
+  },
+  {
+   "fieldname": "manifest_no",
+   "fieldtype": "Int",
+   "label": "Manifest No"
+  },
+  {
+   "fieldname": "shipping_route_no",
+   "fieldtype": "Int",
+   "label": "Shipping Route No"
+  },
+  {
+   "fetch_from": "transaction_no.customer",
+   "fieldname": "importer",
+   "fieldtype": "Link",
+   "label": "Importer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "column_break_vbig",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_vvqo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_hgvh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "voyage__flight_num",
+   "fieldtype": "Data",
+   "label": "Voyage / Flight Num"
+  },
+  {
+   "fieldname": "column_break_wmhi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_udrn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "delivery_order_date",
+   "fieldtype": "Date",
+   "label": "Delivery Order Date"
+  },
+  {
+   "fieldname": "manifest_date",
+   "fieldtype": "Date",
+   "label": "Manifest Date"
+  },
+  {
+   "fieldname": "column_break_npux",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_gnrx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_wrnl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "label": "Weight"
+  },
+  {
+   "fieldname": "section_break_iwqy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "empty_return_yard",
+   "fieldtype": "Link",
+   "label": "Empty return yard",
+   "options": "Address"
+  },
+  {
+   "fieldname": "return_date",
+   "fieldtype": "Date",
+   "label": "Return Date"
+  },
+  {
+   "fieldname": "column_break_mvfy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "attach",
+   "fieldtype": "Attach",
+   "label": "Attach"
+  },
+  {
+   "fieldname": "section_break_itde",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "fcl_list",
+   "fieldtype": "Table",
+   "label": "FCL List",
+   "options": "FCL"
+  },
+  {
+   "fieldname": "cbm_list",
+   "fieldtype": "Table",
+   "label": "CBM List",
+   "options": "CBM"
+  },
+  {
+   "fieldname": "roro_list",
+   "fieldtype": "Table",
+   "label": "RoRo List",
+   "options": "RoRo"
+  },
+  {
+   "fieldname": "section_break_tzgn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "fcl",
+   "fieldtype": "Check",
+   "label": "FCL"
+  },
+  {
+   "fieldname": "column_break_iirt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "lcl",
+   "fieldtype": "Check",
+   "label": "LCL"
+  },
+  {
+   "fieldname": "column_break_qsdq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "cbm",
+   "fieldtype": "Check",
+   "label": "CBM"
+  },
+  {
+   "fieldname": "column_break_mhrx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "roro",
+   "fieldtype": "Check",
+   "label": "RoRo"
+  },
+  {
+   "fetch_from": "transaction_no.bol_no",
+   "fieldname": "bol_no",
+   "fieldtype": "Data",
+   "label": "BoL No"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status"
+  },
+  {
+   "fieldname": "transaction_no",
+   "fieldtype": "Link",
+   "label": "transaction_no",
+   "options": "Transaction"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_calendar_and_gantt": 1,
+ "links": [],
+ "modified": "2024-10-23 01:49:41.981539",
+ "modified_by": "Administrator",
+ "module": "logistics",
+ "name": "BoL",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

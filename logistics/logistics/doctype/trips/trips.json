@@ -1,0 +1,454 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "format:TRP-{transit_bol}-{###}",
+ "creation": "2024-11-01 23:03:49.218654",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "customer_information_section",
+  "customer",
+  "issue_date",
+  "column_break_zbzz",
+  "manifest",
+  "column_break_stsb",
+  "transit_bol",
+  "task_type",
+  "section_break_youl",
+  "transaction_no",
+  "column_break_rhdy",
+  "bol_no",
+  "column_break_yraw",
+  "dec_no",
+  "column_break_cxef",
+  "do_no",
+  "section_break_alca",
+  "transporter",
+  "column_break_wngs",
+  "driver_id",
+  "phone_no",
+  "column_break_ldvk",
+  "truck_no",
+  "total_axels",
+  "weight",
+  "section_break_syaa",
+  "storage_yard",
+  "storage_period",
+  "column_break_dghh",
+  "from_date",
+  "to_date",
+  "section_break_myfv",
+  "fcl",
+  "column_break_nult",
+  "cbm",
+  "column_break_tgur",
+  "roro",
+  "section_break_vdiu",
+  "container_no",
+  "c_s_weight",
+  "packages_type",
+  "column_break_cedh",
+  "container_type",
+  "temperature",
+  "qty",
+  "section_break_dqmj",
+  "port",
+  "demurrage_date",
+  "column_break_ludn",
+  "empty_return_date",
+  "empty_return_yard",
+  "section_break_hrqk",
+  "trip_route",
+  "trip_stops",
+  "section_break_wokv",
+  "column_break_wcml",
+  "status",
+  "column_break_hisi",
+  "total"
+ ],
+ "fields": [
+  {
+   "fetch_from": "transit_bol.customer",
+   "fetch_if_empty": 1,
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer ",
+   "options": "Customer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_zbzz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_youl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "manifest.transaction_no",
+   "fetch_if_empty": 1,
+   "fieldname": "transaction_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Transaction No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_rhdy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "manifest.bl_no",
+   "fetch_if_empty": 1,
+   "fieldname": "bol_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "BoL No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_yraw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Declaration Customs",
+   "fetch_from": "manifest.dec_no",
+   "fetch_if_empty": 1,
+   "fieldname": "dec_no",
+   "fieldtype": "Data",
+   "label": "Dec No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_wokv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_hisi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_dqmj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "transit_bol.empty_return_date",
+   "fetch_if_empty": 1,
+   "fieldname": "empty_return_date",
+   "fieldtype": "Data",
+   "label": "Empty return Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ludn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "transit_bol.empty_return_yard",
+   "fetch_if_empty": 1,
+   "fieldname": "empty_return_yard",
+   "fieldtype": "Data",
+   "label": "Empty return yard",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.task_type=='Trip'",
+   "fieldname": "section_break_alca",
+   "fieldtype": "Section Break",
+   "label": "Carrier Information"
+  },
+  {
+   "fieldname": "column_break_wngs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "driver_id.truck",
+   "fetch_if_empty": 1,
+   "fieldname": "truck_no",
+   "fieldtype": "Data",
+   "label": "Truck No"
+  },
+  {
+   "fieldname": "column_break_ldvk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "driver_id.phone_number",
+   "fetch_if_empty": 1,
+   "fieldname": "phone_no",
+   "fieldtype": "Data",
+   "label": "Phone No"
+  },
+  {
+   "fetch_from": "transit_bol.demurrage_date",
+   "fetch_if_empty": 1,
+   "fieldname": "demurrage_date",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Demurrage Date",
+   "read_only": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "driver_id",
+   "fieldtype": "Link",
+   "label": "Driver ID",
+   "link_filters": "[[\"Fleet\",\"transporter\",\"=\",\"eval: doc.transporter\"]]",
+   "options": "Fleet"
+  },
+  {
+   "fieldname": "section_break_hrqk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "driver_id.axles",
+   "fetch_if_empty": 1,
+   "fieldname": "total_axels",
+   "fieldtype": "Data",
+   "label": "Total Axels"
+  },
+  {
+   "description": "Total of Truck & Trailer Weight",
+   "fetch_from": "driver_id.weight",
+   "fetch_if_empty": 1,
+   "fieldname": "weight",
+   "fieldtype": "Data",
+   "label": "Weight"
+  },
+  {
+   "fieldname": "customer_information_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Information"
+  },
+  {
+   "fieldname": "column_break_cxef",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "manifest.delivery_order_no",
+   "fetch_if_empty": 1,
+   "fieldname": "do_no",
+   "fieldtype": "Data",
+   "label": "DO No",
+   "read_only": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "transporter",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Transporter",
+   "link_filters": "[[\"Supplier\",\"is_transporter\",\"=\",1]]",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "section_break_myfv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fetch_from": "manifest.fcl",
+   "fetch_if_empty": 1,
+   "fieldname": "fcl",
+   "fieldtype": "Check",
+   "label": "FCL"
+  },
+  {
+   "fieldname": "column_break_nult",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fetch_from": "manifest.cbm",
+   "fetch_if_empty": 1,
+   "fieldname": "cbm",
+   "fieldtype": "Check",
+   "label": "CBM"
+  },
+  {
+   "fieldname": "column_break_tgur",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fetch_from": "manifest.roro",
+   "fetch_if_empty": 1,
+   "fieldname": "roro",
+   "fieldtype": "Check",
+   "label": "RoRo"
+  },
+  {
+   "fieldname": "section_break_vdiu",
+   "fieldtype": "Section Break",
+   "hide_border": 1,
+   "label": "Cargo Information"
+  },
+  {
+   "fetch_from": "transit_bol.container_no",
+   "fetch_if_empty": 1,
+   "fieldname": "container_no",
+   "fieldtype": "Data",
+   "label": "Container No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_cedh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "transit_bol.container_type",
+   "fetch_if_empty": 1,
+   "fieldname": "container_type",
+   "fieldtype": "Data",
+   "label": "Container Type",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "transit_bol.qty",
+   "fetch_if_empty": 1,
+   "fieldname": "qty",
+   "fieldtype": "Data",
+   "label": "Qty",
+   "read_only": 1
+  },
+  {
+   "fieldname": "trip_route",
+   "fieldtype": "Table",
+   "label": "Trip Route",
+   "options": "Trip Route"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Float",
+   "label": "Total",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "description": "Container & Shipment Weight",
+   "fetch_from": "transit_bol.weight",
+   "fetch_if_empty": 1,
+   "fieldname": "c_s_weight",
+   "fieldtype": "Data",
+   "label": "C&S Weight",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "transit_bol.manifest_no",
+   "fetch_if_empty": 1,
+   "fieldname": "manifest",
+   "fieldtype": "Link",
+   "label": "Manifest",
+   "options": "Manifest"
+  },
+  {
+   "fieldname": "transit_bol",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Transit BoL",
+   "options": "Transit BoL",
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break_wcml",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "status",
+   "options": "Draft\nOpen\nComplete"
+  },
+  {
+   "fieldname": "task_type",
+   "fieldtype": "Select",
+   "label": "Task Type",
+   "options": "Trip\nStorage\nDischarge"
+  },
+  {
+   "depends_on": "eval:doc.task_type=='Storage'",
+   "fieldname": "section_break_syaa",
+   "fieldtype": "Section Break",
+   "label": "Storage Information"
+  },
+  {
+   "fieldname": "storage_yard",
+   "fieldtype": "Link",
+   "label": "Storage Yard",
+   "link_filters": "[[\"Supplier\",\"supplier_group\",\"=\",\"YARDS\"]]",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "column_break_dghh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date"
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date"
+  },
+  {
+   "fieldname": "storage_period",
+   "fieldtype": "Data",
+   "label": "Storage Period"
+  },
+  {
+   "default": "Now",
+   "fieldname": "issue_date",
+   "fieldtype": "Datetime",
+   "label": "Issue Date",
+   "options": "Now"
+  },
+  {
+   "fieldname": "column_break_stsb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "trip_stops",
+   "fieldtype": "Table",
+   "label": "Trip stops",
+   "options": "Trip stops"
+  },
+  {
+   "fetch_from": "transit_bol.packages_type",
+   "fieldname": "packages_type",
+   "fieldtype": "Data",
+   "label": "Packages Type"
+  },
+  {
+   "description": "If the Container type is Reefer",
+   "fieldname": "temperature",
+   "fieldtype": "Data",
+   "label": "Temperature"
+  },
+  {
+   "fetch_from": "transit_bol.port",
+   "fieldname": "port",
+   "fieldtype": "Data",
+   "label": "Port",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_calendar_and_gantt": 1,
+ "links": [],
+ "modified": "2025-09-23 17:44:41.971407",
+ "modified_by": "Administrator",
+ "module": "logistics",
+ "name": "Trips",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

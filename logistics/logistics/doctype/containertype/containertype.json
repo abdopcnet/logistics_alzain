@@ -1,0 +1,144 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "field:container_type",
+ "creation": "2024-11-19 11:12:44.842354",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "container_type",
+  "container_weight",
+  "column_break_mixh",
+  "image",
+  "attach_image",
+  "dimensions_section",
+  "in_length",
+  "out_length",
+  "column_break_ebyf",
+  "in_width",
+  "out_width",
+  "column_break_eshn",
+  "in_height",
+  "out_height",
+  "section_break_miem",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "container_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Container Type",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "container_weight",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Container Weight",
+   "precision": "0"
+  },
+  {
+   "fieldname": "column_break_mixh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Image",
+   "label": "Image",
+   "options": "attach_image"
+  },
+  {
+   "fieldname": "attach_image",
+   "fieldtype": "Attach Image",
+   "label": "Attach Image"
+  },
+  {
+   "fieldname": "dimensions_section",
+   "fieldtype": "Section Break",
+   "label": "Dimensions"
+  },
+  {
+   "fieldname": "in_length",
+   "fieldtype": "Float",
+   "label": "In Length",
+   "precision": "3"
+  },
+  {
+   "fieldname": "out_length",
+   "fieldtype": "Float",
+   "label": "Out Length",
+   "precision": "3"
+  },
+  {
+   "fieldname": "column_break_ebyf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "in_width",
+   "fieldtype": "Float",
+   "label": "In Width",
+   "precision": "3"
+  },
+  {
+   "fieldname": "out_width",
+   "fieldtype": "Float",
+   "label": "Out Width",
+   "precision": "3"
+  },
+  {
+   "fieldname": "column_break_eshn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "in_height",
+   "fieldtype": "Float",
+   "label": "In Height",
+   "precision": "3"
+  },
+  {
+   "fieldname": "out_height",
+   "fieldtype": "Float",
+   "label": "Out Height",
+   "precision": "3"
+  },
+  {
+   "fieldname": "section_break_miem",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "image_field": "attach_image",
+ "links": [],
+ "make_attachments_public": 1,
+ "max_attachments": 20,
+ "modified": "2024-11-19 11:12:44.842354",
+ "modified_by": "Administrator",
+ "module": "logistics",
+ "name": "ContainerType",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

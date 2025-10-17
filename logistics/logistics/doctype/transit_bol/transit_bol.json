@@ -1,0 +1,363 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "format:TRNBL-{container_no}-{YY}-{#####}",
+ "creation": "2025-01-13 14:13:49.555670",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "customer_info_section",
+  "customer",
+  "principal_contact",
+  "mphone",
+  "column_break_bbuw",
+  "column_break_ezeq",
+  "address",
+  "city",
+  "phone",
+  "section_break_qbhq",
+  "status",
+  "column_break_bbsg",
+  "total",
+  "section_break_snun",
+  "transaction_no",
+  "column_break_wnuy",
+  "bl_no",
+  "column_break_llbg",
+  "dec_no",
+  "column_break_uizl",
+  "manifest_no",
+  "section_break_bxhq",
+  "port",
+  "discharge_date",
+  "comments",
+  "cbm_qty",
+  "column_break_kbdu",
+  "terminal",
+  "demurrage_date",
+  "column_break_xrxr",
+  "empty_return_yard",
+  "empty_return_date",
+  "container_info_section",
+  "container_no",
+  "column_break_ovho",
+  "container_type",
+  "column_break_zzkd",
+  "container_weight",
+  "column_break_qynp",
+  "shipping_line",
+  "cargo_info_section",
+  "packages_type",
+  "column_break_dyik",
+  "qty",
+  "column_break_tele",
+  "weight",
+  "section_break_ooui",
+  "trip_plans",
+  "more_info_tab"
+ ],
+ "fields": [
+  {
+   "fetch_from": "manifest_no.customer",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nOpen\nComplete",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cbm_qty",
+   "fieldtype": "Float",
+   "label": "CBM Qty"
+  },
+  {
+   "fieldname": "column_break_bbuw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "comments",
+   "fieldtype": "Data",
+   "label": "Comments"
+  },
+  {
+   "fetch_from": "manifest_no.demurrage_date",
+   "fetch_if_empty": 1,
+   "fieldname": "demurrage_date",
+   "fieldtype": "Date",
+   "label": "Demurrage Date"
+  },
+  {
+   "fetch_from": "manifest_no.empty_return_date",
+   "fetch_if_empty": 1,
+   "fieldname": "empty_return_date",
+   "fieldtype": "Date",
+   "label": "Empty return Date"
+  },
+  {
+   "fetch_from": "manifest_no.empty_return_yard",
+   "fieldname": "empty_return_yard",
+   "fieldtype": "Link",
+   "label": "Empty return yard",
+   "options": "Address"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Float",
+   "label": "Total",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ezeq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Link",
+   "label": "Address",
+   "link_filters": "[[\"Address\",\"link_title\",\"=\",\"eval: doc.customer\"]]",
+   "options": "Address"
+  },
+  {
+   "fetch_from": "address.phone",
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone"
+  },
+  {
+   "fieldname": "section_break_snun",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "transaction_no",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Transaction No",
+   "options": "Transaction"
+  },
+  {
+   "fieldname": "column_break_wnuy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "manifest_no.dec_no",
+   "fieldname": "dec_no",
+   "fieldtype": "Data",
+   "label": "Dec No"
+  },
+  {
+   "fieldname": "column_break_llbg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "manifest_no.bl_no",
+   "fieldname": "bl_no",
+   "fieldtype": "Data",
+   "label": "B/L no"
+  },
+  {
+   "fieldname": "column_break_uizl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "manifest_no",
+   "fieldtype": "Link",
+   "label": "Manifest No",
+   "options": "Manifest"
+  },
+  {
+   "fieldname": "container_info_section",
+   "fieldtype": "Section Break",
+   "label": "Container Info"
+  },
+  {
+   "fieldname": "container_no",
+   "fieldtype": "Data",
+   "label": "Container No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ovho",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "container_type",
+   "fieldtype": "Data",
+   "label": "Container Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_zzkd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "container_weight",
+   "fieldtype": "Data",
+   "label": "Container Weight",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_qynp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cargo_info_section",
+   "fieldtype": "Section Break",
+   "label": "Cargo Info"
+  },
+  {
+   "fetch_from": "manifest_no.type_of_packages",
+   "fetch_if_empty": 1,
+   "fieldname": "packages_type",
+   "fieldtype": "Data",
+   "label": "Packages Type ",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_dyik",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Data",
+   "label": "Qty"
+  },
+  {
+   "fieldname": "column_break_tele",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Data",
+   "label": "Weight"
+  },
+  {
+   "fieldname": "section_break_ooui",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "trip_plans",
+   "fieldtype": "Table",
+   "label": "Trip Plans",
+   "options": "Trip Plans"
+  },
+  {
+   "fieldname": "more_info_tab",
+   "fieldtype": "Tab Break",
+   "label": "More Info"
+  },
+  {
+   "fieldname": "principal_contact",
+   "fieldtype": "Link",
+   "label": "Principal Contact",
+   "link_filters": "[[\"Contact\",\"link_name\",\"=\",\"eval: doc.customer\"],[\"Contact\",\"department\",\"=\",\"Distribution Coordinator\"]]",
+   "options": "Contact"
+  },
+  {
+   "fetch_from": "principal_contact.mobile_no",
+   "fieldname": "mphone",
+   "fieldtype": "Data",
+   "label": "Phone"
+  },
+  {
+   "fetch_from": "address.city",
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "customer_info_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Info"
+  },
+  {
+   "fieldname": "section_break_bxhq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "manifest_no.shipping_line",
+   "fieldname": "shipping_line",
+   "fieldtype": "Data",
+   "label": "Shipping Line"
+  },
+  {
+   "fieldname": "section_break_qbhq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_bbsg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "manifest_no.port",
+   "fieldname": "port",
+   "fieldtype": "Data",
+   "label": "Port"
+  },
+  {
+   "fetch_from": "manifest_no.discharge_date",
+   "fetch_if_empty": 1,
+   "fieldname": "discharge_date",
+   "fieldtype": "Date",
+   "label": "Discharge Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_kbdu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "manifest_no.terminal",
+   "fieldname": "terminal",
+   "fieldtype": "Data",
+   "label": "Terminal"
+  },
+  {
+   "fieldname": "column_break_xrxr",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_calendar_and_gantt": 1,
+ "links": [
+  {
+   "link_doctype": "Trips",
+   "link_fieldname": "transit_bol"
+  }
+ ],
+ "modified": "2025-09-23 17:47:47.698367",
+ "modified_by": "Administrator",
+ "module": "logistics",
+ "name": "Transit BoL",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,362 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "format:MNI-{YY}-{#####}",
+ "creation": "2024-01-26 01:04:55.679456",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "customer",
+  "status",
+  "column_break_jpth",
+  "issued_on",
+  "total",
+  "section_break_tynv",
+  "transaction_no",
+  "column_break_wgnx",
+  "bl_no",
+  "column_break_dpag",
+  "delivery_order_no",
+  "column_break_bkik",
+  "document_ref_no",
+  "column_break_dkfp",
+  "dec_no",
+  "section_break_caqk",
+  "shipping_line",
+  "column_break_agit",
+  "shipping_line_agent",
+  "section_break_vbno",
+  "port",
+  "dec_status",
+  "discharge_date",
+  "column_break_andt",
+  "terminal",
+  "terminal_status",
+  "demurrage_date",
+  "column_break_iurv",
+  "empty_return_yard",
+  "do_status",
+  "empty_return_date",
+  "section_break_kfzi",
+  "fcl",
+  "column_break_dfzk",
+  "cbm",
+  "column_break_evdz",
+  "roro",
+  "column_break_oeeg",
+  "pallet",
+  "no_of_packages",
+  "type_of_packages",
+  "section_break_oiie",
+  "fcl_list",
+  "cbm_list",
+  "roro_list"
+ ],
+ "fields": [
+  {
+   "fetch_from": "transaction_no.customer",
+   "fetch_if_empty": 1,
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "transaction_no.bol_no",
+   "fetch_if_empty": 1,
+   "fieldname": "bl_no",
+   "fieldtype": "Link",
+   "label": "B/L no.",
+   "options": "Delivery Order"
+  },
+  {
+   "fetch_from": "document_ref_no.dec_no",
+   "fetch_if_empty": 1,
+   "fieldname": "dec_no",
+   "fieldtype": "Data",
+   "label": "Dec No"
+  },
+  {
+   "fieldname": "no_of_packages",
+   "fieldtype": "Data",
+   "label": "No of Packages",
+   "read_only": 1
+  },
+  {
+   "fieldname": "type_of_packages",
+   "fieldtype": "Link",
+   "label": "Type of Packages",
+   "options": "UOM",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_jpth",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_tynv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "transaction_no",
+   "fieldtype": "Link",
+   "label": "Transaction No",
+   "options": "Transaction"
+  },
+  {
+   "fetch_from": "transaction_no.document_ref_no",
+   "fetch_if_empty": 1,
+   "fieldname": "document_ref_no",
+   "fieldtype": "Link",
+   "label": "Document Ref No",
+   "options": "Declaration Customs"
+  },
+  {
+   "fieldname": "column_break_wgnx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "document_ref_no.discharge_date",
+   "fetch_if_empty": 1,
+   "fieldname": "discharge_date",
+   "fieldtype": "Date",
+   "label": "Discharge Date"
+  },
+  {
+   "fieldname": "column_break_dpag",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "document_ref_no.demurrage_date",
+   "fetch_if_empty": 1,
+   "fieldname": "demurrage_date",
+   "fieldtype": "Date",
+   "label": "Demurrage Date"
+  },
+  {
+   "fieldname": "column_break_bkik",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "bl_no.delivery_order_no",
+   "fetch_if_empty": 1,
+   "fieldname": "delivery_order_no",
+   "fieldtype": "Data",
+   "label": "Delivery Order No"
+  },
+  {
+   "fetch_from": "bl_no.empty_return_date",
+   "fetch_if_empty": 1,
+   "fieldname": "empty_return_date",
+   "fieldtype": "Date",
+   "label": "Empty return Date"
+  },
+  {
+   "fetch_from": "bl_no.empty_return_yard",
+   "fetch_if_empty": 1,
+   "fieldname": "empty_return_yard",
+   "fieldtype": "Link",
+   "label": "Empty return yard",
+   "options": "Address"
+  },
+  {
+   "fetch_from": "document_ref_no.discharge_port",
+   "fetch_if_empty": 1,
+   "fieldname": "port",
+   "fieldtype": "Data",
+   "label": "Port"
+  },
+  {
+   "fetch_from": "document_ref_no.terminal",
+   "fetch_if_empty": 1,
+   "fieldname": "terminal",
+   "fieldtype": "Data",
+   "label": "Terminal"
+  },
+  {
+   "fieldname": "section_break_kfzi",
+   "fieldtype": "Section Break",
+   "label": "Cargo Details"
+  },
+  {
+   "default": "0",
+   "fetch_from": "transaction_no.fcl",
+   "fetch_if_empty": 1,
+   "fieldname": "fcl",
+   "fieldtype": "Check",
+   "label": "FCL",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_dfzk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fetch_from": "transaction_no.cbm",
+   "fetch_if_empty": 1,
+   "fieldname": "cbm",
+   "fieldtype": "Check",
+   "label": "LCL / CBM",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_evdz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fetch_from": "transaction_no.roro",
+   "fetch_if_empty": 1,
+   "fieldname": "roro",
+   "fieldtype": "Check",
+   "label": "RoRo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_oiie",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.fcl=='1'",
+   "fieldname": "fcl_list",
+   "fieldtype": "Table",
+   "label": "FCL List",
+   "options": "FCL"
+  },
+  {
+   "depends_on": "eval:doc.cbm=='1'",
+   "fieldname": "cbm_list",
+   "fieldtype": "Table",
+   "label": "CBM List",
+   "options": "CBM"
+  },
+  {
+   "depends_on": "eval:doc.roro=='1'",
+   "fieldname": "roro_list",
+   "fieldtype": "Table",
+   "label": "RoRo List",
+   "options": "RoRo"
+  },
+  {
+   "fieldname": "column_break_oeeg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "pallet",
+   "fieldtype": "Check",
+   "label": "pallet"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nOpen\nComplete",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Float",
+   "label": "Total",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "default": "Now",
+   "fieldname": "issued_on",
+   "fieldtype": "Datetime",
+   "label": "Issued On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_vbno",
+   "fieldtype": "Section Break",
+   "label": "Cargo Location"
+  },
+  {
+   "fieldname": "column_break_andt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_iurv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_caqk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "transaction_no.shipping_line",
+   "fetch_if_empty": 1,
+   "fieldname": "shipping_line",
+   "fieldtype": "Data",
+   "label": "Shipping Line"
+  },
+  {
+   "fieldname": "column_break_agit",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "transaction_no.shipping_line_agent",
+   "fetch_if_empty": 1,
+   "fieldname": "shipping_line_agent",
+   "fieldtype": "Data",
+   "label": "Shipping Line Agent"
+  },
+  {
+   "fieldname": "column_break_dkfp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "document_ref_no.dec_status",
+   "fetch_if_empty": 1,
+   "fieldname": "dec_status",
+   "fieldtype": "Data",
+   "label": "Dec Status"
+  },
+  {
+   "fetch_from": "bl_no.status",
+   "fetch_if_empty": 1,
+   "fieldname": "do_status",
+   "fieldtype": "Data",
+   "label": "DO Status",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "document_ref_no.terminal_status",
+   "fetch_if_empty": 1,
+   "fieldname": "terminal_status",
+   "fieldtype": "Data",
+   "label": "Terminal Status"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_calendar_and_gantt": 1,
+ "links": [],
+ "modified": "2025-03-15 15:36:00.823522",
+ "modified_by": "Administrator",
+ "module": "logistics",
+ "name": "Manifest",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

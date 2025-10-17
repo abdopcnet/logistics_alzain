@@ -1,0 +1,243 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:container_no",
+ "creation": "2024-01-26 18:51:24.405253",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "container_no",
+  "type",
+  "container_owner",
+  "classification_society",
+  "column_break_1wwg",
+  "shipping_line_owner",
+  "agent",
+  "image",
+  "attach_image",
+  "section_break_izck",
+  "container_weight",
+  "column_break_anly",
+  "maximum_payload",
+  "column_break_ukhk",
+  "maximum_gross",
+  "dimensions_section",
+  "in_length",
+  "out_length",
+  "column_break_ozmm",
+  "in_width",
+  "out_width",
+  "column_break_ot1z",
+  "in_height",
+  "out_height",
+  "column_break_mnnf",
+  "float_wcza",
+  "out_cube_dimension",
+  "section_break_yx3z",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "type",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Container Type",
+   "options": "ContainerType",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1wwg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "dimensions_section",
+   "fieldtype": "Section Break",
+   "label": "Dimensions"
+  },
+  {
+   "fieldname": "column_break_ozmm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ot1z",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_yx3z",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "Notes"
+  },
+  {
+   "fetch_from": "type.container_weight",
+   "fieldname": "container_weight",
+   "fieldtype": "Float",
+   "label": "Container Tare Weight",
+   "precision": "0"
+  },
+  {
+   "fieldname": "shipping_line_owner",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Shipping Line",
+   "options": "Shipping Line",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "shipping_line_owner.agent_name",
+   "fieldname": "agent",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Agent",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "container_no",
+   "fieldtype": "Data",
+   "label": "Container No",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "type.attach_image",
+   "fieldname": "image",
+   "fieldtype": "Image",
+   "label": "Image",
+   "options": "attach_image"
+  },
+  {
+   "fetch_from": "type.attach_image",
+   "fieldname": "attach_image",
+   "fieldtype": "Attach Image",
+   "hidden": 1,
+   "label": "Attach Image"
+  },
+  {
+   "fetch_from": "type.in_length",
+   "fieldname": "in_length",
+   "fieldtype": "Float",
+   "label": "In Length",
+   "precision": "3"
+  },
+  {
+   "fetch_from": "type.out_length",
+   "fieldname": "out_length",
+   "fieldtype": "Float",
+   "label": "Out Length",
+   "precision": "3"
+  },
+  {
+   "fetch_from": "type.in_width",
+   "fieldname": "in_width",
+   "fieldtype": "Float",
+   "label": "In Width",
+   "precision": "3"
+  },
+  {
+   "fetch_from": "type.out_width",
+   "fieldname": "out_width",
+   "fieldtype": "Float",
+   "label": "Out Width",
+   "precision": "3"
+  },
+  {
+   "fetch_from": "type.in_height",
+   "fieldname": "in_height",
+   "fieldtype": "Float",
+   "label": "In Height",
+   "precision": "3"
+  },
+  {
+   "fetch_from": "type.out_height",
+   "fieldname": "out_height",
+   "fieldtype": "Float",
+   "label": "Out Height",
+   "precision": "3"
+  },
+  {
+   "fieldname": "column_break_mnnf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "float_wcza",
+   "fieldtype": "Float",
+   "label": "In Cube Dimension"
+  },
+  {
+   "fieldname": "container_owner",
+   "fieldtype": "Data",
+   "label": "Container owner"
+  },
+  {
+   "default": "0",
+   "fieldname": "classification_society",
+   "fieldtype": "Check",
+   "label": "Classification society"
+  },
+  {
+   "fieldname": "section_break_izck",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_anly",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "maximum_payload",
+   "fieldtype": "Float",
+   "label": "Maximum Payload"
+  },
+  {
+   "fieldname": "column_break_ukhk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "maximum_gross",
+   "fieldtype": "Float",
+   "label": "Maximum Gross"
+  },
+  {
+   "fieldname": "out_cube_dimension",
+   "fieldtype": "Float",
+   "label": "Out Cube Dimension"
+  }
+ ],
+ "image_field": "attach_image",
+ "links": [],
+ "make_attachments_public": 1,
+ "modified": "2025-02-08 12:52:48.091852",
+ "modified_by": "Administrator",
+ "module": "logistics",
+ "name": "Container",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

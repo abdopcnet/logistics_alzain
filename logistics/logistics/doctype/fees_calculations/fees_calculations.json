@@ -1,0 +1,125 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{transaction_no}-{#####}",
+ "creation": "2024-12-16 02:41:28.781073",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "customer",
+  "column_break_pt4r0",
+  "transaction_no",
+  "column_break_w9a6f",
+  "sales_invoice",
+  "transaction_fees_section",
+  "fees",
+  "amended_from",
+  "delivery_order_agent_fee_section",
+  "agent_fee",
+  "declaration_customs_port_fees_section",
+  "port_fee"
+ ],
+ "fields": [
+  {
+   "allow_on_submit": 1,
+   "fieldname": "fees",
+   "fieldtype": "Table",
+   "options": "Fees"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "column_break_pt4r0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "transaction_no",
+   "fieldtype": "Data",
+   "label": "Transaction No"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Fees Calculations",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break_w9a6f",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Data",
+   "label": "Sales Invoice",
+   "read_only": 1
+  },
+  {
+   "fieldname": "transaction_fees_section",
+   "fieldtype": "Section Break",
+   "label": "Transaction Fees"
+  },
+  {
+   "fieldname": "delivery_order_agent_fee_section",
+   "fieldtype": "Section Break",
+   "label": "Delivery Order Agent Fee"
+  },
+  {
+   "fieldname": "agent_fee",
+   "fieldtype": "Table",
+   "options": "Agent Fee"
+  },
+  {
+   "fieldname": "declaration_customs_port_fees_section",
+   "fieldtype": "Section Break",
+   "label": "Declaration Customs Port Fees"
+  },
+  {
+   "fieldname": "port_fee",
+   "fieldtype": "Table",
+   "options": "Port Fee"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-03-26 05:00:18.902415",
+ "modified_by": "Administrator",
+ "module": "logistics",
+ "name": "Fees Calculations",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

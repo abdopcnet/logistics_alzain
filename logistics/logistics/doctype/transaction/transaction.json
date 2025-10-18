@@ -109,13 +109,13 @@
   "required",
   "small_text_funl",
   "table_clyq",
-  "invoiced",
   "total_expenses",
+  "invoiced",
   "section_break_jebw",
   "transaction_jv_entries",
-  "attach_tab",
-  "document_attache",
-  "sales_invoice_info"
+  "section_break_bgcz",
+  "sales_invoice_info",
+  "attach_tab"
  ],
  "fields": [
   {
@@ -554,12 +554,6 @@
    "label": "Attach"
   },
   {
-   "fieldname": "document_attache",
-   "fieldtype": "Table",
-   "label": "Document Attache",
-   "options": "Document Attache"
-  },
-  {
    "fieldname": "containers_qty",
    "fieldtype": "Data",
    "label": "Containers Qty",
@@ -715,13 +709,6 @@
    "label": "Free Day's"
   },
   {
-   "default": "0",
-   "fieldname": "invoiced",
-   "fieldtype": "Check",
-   "label": "Invoiced",
-   "permlevel": 1
-  },
-  {
    "default": "Direct",
    "fieldname": "group_code",
    "fieldtype": "Select",
@@ -739,7 +726,20 @@
    "fieldname": "sales_invoice_info",
    "fieldtype": "Table",
    "label": "Sales Invoice Info",
-   "options": "Sales Invoice Info"
+   "options": "Sales Invoice Info",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_bgcz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "invoiced",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "invoiced"
   }
  ],
  "image_field": "attach_image",
@@ -758,7 +758,7 @@
    "link_fieldname": "custom_transaction_no"
   }
  ],
- "modified": "2025-10-18 00:55:22.209257",
+ "modified": "2025-10-18 04:31:57.655454",
  "modified_by": "Administrator",
  "module": "logistics",
  "name": "Transaction",

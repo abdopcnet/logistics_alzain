@@ -67,6 +67,7 @@
    "fieldtype": "Link",
    "label": "customer",
    "options": "Customer",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -109,7 +110,8 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Reference Doc",
-   "options": "Journal Entry"
+   "options": "Journal Entry",
+   "read_only": 1
   },
   {
    "fieldname": "comments",
@@ -120,6 +122,7 @@
    "fieldname": "bol_no",
    "fieldtype": "Data",
    "label": "Bol No",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -127,13 +130,14 @@
    "fieldtype": "Link",
    "label": "Transaction",
    "options": "Transaction",
+   "read_only": 1,
    "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-08-01 02:12:30.967323",
+ "modified": "2025-10-21 20:19:01.245411",
  "modified_by": "Administrator",
  "module": "logistics",
  "name": "Transaction Fee",

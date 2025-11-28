@@ -109,7 +109,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-02 14:23:11.936748",
+ "modified": "2025-11-12 11:54:25.135754",
  "modified_by": "Administrator",
  "module": "logistics",
  "name": "HS code",
@@ -130,6 +130,7 @@
   }
  ],
  "quick_entry": 1,
+ "search_fields": "arabic,english,arabic_item_list,english_item_list",
  "show_name_in_global_search": 1,
  "sort_field": "modified",
  "sort_order": "DESC",

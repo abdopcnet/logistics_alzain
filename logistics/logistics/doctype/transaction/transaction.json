@@ -710,8 +710,7 @@
    "fieldtype": "Table",
    "label": "Sales Invoice Info",
    "options": "Sales Invoice Info",
-   "permlevel": 1,
-   "read_only": 1
+   "permlevel": 1
   },
   {
    "collapsible": 1,
@@ -742,7 +741,7 @@
   }
  ],
  "make_attachments_public": 1,
- "modified": "2025-11-27 00:53:04.300405",
+ "modified": "2025-12-04 21:55:22.493356",
  "modified_by": "Administrator",
  "module": "logistics",
  "name": "Transaction",
@@ -774,6 +773,7 @@
   }
  ],
  "quick_entry": 1,
+ "row_format": "Dynamic",
  "search_fields": "customer,bol_no,document_ref_no,dec_no",
  "sort_field": "modified",
  "sort_order": "DESC",

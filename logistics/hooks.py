@@ -33,13 +33,14 @@ app_license = "mit"
 
 doctype_js = {
     "Sales Invoice": [
-        "public/js/fetch_customer_expenses.js",
         "public/js/sales_invoice.js",
-        "public/js/sales_invoice_loader.js",
-        "public/js/sales_lnvoice_list_view.js"
     ],
-    "Purchase Order": "public/js/purchase_order.js",
-    "Item": "public/js/Item_update_custom_supplier_Dynamic.js"
+    "Purchase Order": [
+        "public/js/purchase_order.js",
+    ],
+    "Item": [
+        "public/js/item.js",
+    ],
 }
 
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}

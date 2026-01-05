@@ -134,13 +134,11 @@ doctype_js = {
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+    "Journal Entry": {
+        "before_save": "logistics.journal_entry.before_save"
+    }
+}
 
 # Scheduled Tasks
 # ---------------
@@ -238,11 +236,11 @@ doctype_js = {
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-fixtures = [
-    {"doctype": "Custom Field", "filters": [["module", "=", "logistics"]]},
-    {"doctype": "Property Setter", "filters": [["module", "=", "logistics"]]},
-    {"doctype": "Client Script", "filters": [["module", "=", "logistics"]]},
-    {"doctype": "Server Script", "filters": [["module", "=", "logistics"]]},
-]
+# fixtures = [
+# {"doctype": "Custom Field", "filters": [["module", "=", "logistics"]]},
+# {"doctype": "Property Setter", "filters": [["module", "=", "logistics"]]},
+# {"doctype": "Client Script", "filters": [["module", "=", "logistics"]]},
+# {"doctype": "Server Script", "filters": [["module", "=", "logistics"]]},
+# ]
 
 # bench export-fixtures --app logistics

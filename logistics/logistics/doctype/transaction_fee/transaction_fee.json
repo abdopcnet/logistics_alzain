@@ -109,7 +109,8 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Reference Doc",
-   "options": "Journal Entry"
+   "options": "Journal Entry",
+   "read_only": 1
   },
   {
    "fieldname": "comments",
@@ -136,7 +137,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-01-08 15:04:24.550547",
+ "modified": "2026-01-10 09:52:08.682090",
  "modified_by": "Administrator",
  "module": "logistics",
  "name": "Transaction Fee",

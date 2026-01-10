@@ -41,6 +41,13 @@ doctype_js = {
     "Item": [
         "public/js/item.js",
     ],
+    "Journal Entry": [
+        "public/js/journal_entry.js",
+    ],
+}
+
+doctype_list_js = {
+    "Journal Entry": "public/js/journal_entry_list.js",
 }
 
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -137,7 +144,8 @@ doctype_js = {
 
 doc_events = {
     "Journal Entry": {
-        "before_save": "logistics.journal_entry.before_save"
+        "before_save": "logistics.journal_entry.before_save",
+        "on_submit": "logistics.journal_entry.on_submit"
     }
 }
 
